@@ -1,18 +1,23 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Users, Clock, AlertCircle, CheckCircle, Repeat, Building2 } from 'lucide-react';
+import { MapPin, Users, Clock, AlertCircle, CheckCircle, Repeat, Building2, Bell, BellOff, ChevronDown, ChevronUp, User } from 'lucide-react';
 import { Minyan } from '@/lib/api';
 import { calculateDistance, formatDistance } from '@/hooks/useGeolocation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 
 interface MinyanCardProps {
   minyan: Minyan;
   userPosition?: { latitude: number; longitude: number } | null;
   onJoin: (minyanId: string) => void;
   onLeave: (minyanId: string) => void;
+  onToggleNotification: () => void;
   isParticipant: boolean;
+  isNotificationEnabled: boolean;
+  users: Record<string, { name: string; avatar: string }>;
 }
 
 const prayerTypeColors: Record<string, string> = {
@@ -27,9 +32,13 @@ export function MinyanCard({
   userPosition,
   onJoin,
   onLeave,
+  onToggleNotification,
   isParticipant,
+  isNotificationEnabled,
+  users,
 }: MinyanCardProps) {
   const { t } = useTranslation();
+  const [showParticipants, setShowParticipants] = useState(false);
 
   const distance = userPosition
     ? calculateDistance(userPosition, {
@@ -45,6 +54,12 @@ export function MinyanCard({
   const minRequired = minyan.min_required;
   const progressPercent = Math.min((participantCount / minRequired) * 100, 100);
 
+  // Get participant names
+  const participantList = minyan.participants.map(id => ({
+    id,
+    ...users[id] || { name: `Utilisateur ${id.slice(-4)}`, avatar: '??' }
+  }));
+
   return (
     <Card
       className={cn(
@@ -54,7 +69,7 @@ export function MinyanCard({
         isComplete && 'border-green-500 shadow-md'
       )}
     >
-      {/* Status badges */}
+      {/* Header badges */}
       <div className="absolute top-0 right-0 flex flex-col gap-1">
         {isComplete && (
           <div className="bg-green-500 text-white px-3 py-1 text-xs font-bold flex items-center gap-1">
@@ -79,7 +94,7 @@ export function MinyanCard({
 
       <CardHeader className={cn('pb-2', (isFuneral || isNearby || isComplete) && 'pt-8')}>
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <Badge
               variant="outline"
               className={cn(
@@ -106,7 +121,7 @@ export function MinyanCard({
       </CardHeader>
 
       <CardContent className="space-y-3">
-        {/* Location with icon */}
+        {/* Location */}
         <div className="flex items-center gap-2 text-sm">
           <Building2 className="h-4 w-4 text-muted-foreground" />
           <span className="font-medium">{minyan.location}</span>
@@ -117,7 +132,7 @@ export function MinyanCard({
           <span>{new Date(minyan.time).toLocaleString()}</span>
         </div>
 
-        {/* Progress bar - Table de 10 */}
+        {/* Progress bar */}
         <div className="space-y-1">
           <div className="flex items-center justify-between text-sm">
             <span className="flex items-center gap-1">
@@ -142,29 +157,84 @@ export function MinyanCard({
           </div>
         </div>
 
+        {/* Participants list (collapsible) */}
+        <div className="border rounded-md overflow-hidden">
+          <button
+            onClick={() => setShowParticipants(!showParticipants)}
+            className="w-full px-3 py-2 flex items-center justify-between bg-muted/50 hover:bg-muted transition-colors"
+          >
+            <span className="text-sm font-medium flex items-center gap-2">
+              <User className="h-4 w-4" />
+              {participantCount} personne{participantCount > 1 ? 's' : ''} à la table
+            </span>
+            {showParticipants ? (
+              <ChevronUp className="h-4 w-4 text-muted-foreground" />
+            ) : (
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            )}
+          </button>
+          
+          {showParticipants && (
+            <div className="p-3 space-y-2 max-h-40 overflow-y-auto">
+              {participantList.map((participant, index) => (
+                <div key={participant.id} className="flex items-center gap-2">
+                  <Avatar className="h-6 w-6">
+                    <AvatarFallback className="text-xs bg-primary/10">
+                      {participant.avatar}
+                    </AvatarFallback>
+                  </Avatar>
+                  <span className="text-sm">{participant.name}</span>
+                  {index === 0 && (
+                    <Badge variant="outline" className="text-xs">Créateur</Badge>
+                  )}
+                  {participant.id === 'current_user' && (
+                    <Badge variant="secondary" className="text-xs">Vous</Badge>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
         {minyan.notes && (
           <p className="text-sm text-muted-foreground italic">
             {minyan.notes}
           </p>
         )}
 
-        {/* Join/Leave button */}
-        <Button
-          variant={isParticipant ? 'outline' : isComplete ? 'secondary' : 'default'}
-          className={cn(
-            'w-full',
-            isComplete && !isParticipant && 'bg-green-100 text-green-800 hover:bg-green-200'
+        {/* Action buttons */}
+        <div className="flex gap-2">
+          <Button
+            variant={isParticipant ? 'outline' : isComplete ? 'secondary' : 'default'}
+            className={cn(
+              'flex-1',
+              isComplete && !isParticipant && 'bg-green-100 text-green-800 hover:bg-green-200'
+            )}
+            onClick={() => isParticipant ? onLeave(minyan.id) : onJoin(minyan.id)}
+          >
+            {isParticipant 
+              ? 'Quitter la table' 
+              : isComplete 
+                ? `Rejoindre (+${participantCount - minRequired + 1})` 
+                : 'S\'asseoir à la table'}
+          </Button>
+          
+          {!isParticipant && (
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={onToggleNotification}
+              className={isNotificationEnabled ? 'text-primary' : ''}
+              title={isNotificationEnabled ? 'Notifications activées' : 'Me notifier à 10'}
+            >
+              {isNotificationEnabled ? (
+                <Bell className="h-4 w-4" />
+              ) : (
+                <BellOff className="h-4 w-4" />
+              )}
+            </Button>
           )}
-          onClick={() =>
-            isParticipant ? onLeave(minyan.id) : onJoin(minyan.id)
-          }
-        >
-          {isParticipant 
-            ? t('minyan.leave') 
-            : isComplete 
-              ? 'Rejoindre (+' + (participantCount - minRequired + 1) + ')' 
-              : 'Rejoindre la table'}
-        </Button>
+        </div>
       </CardContent>
     </Card>
   );

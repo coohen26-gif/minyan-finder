@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Plus, Filter, MapPin } from 'lucide-react';
+import { Plus, Filter, MapPin, Bell, BellOff, Users } from 'lucide-react';
 import { toast } from 'sonner';
 import { Minyan, MinyanRequest } from '@/lib/api';
 import { useGeolocation, calculateDistance } from '@/hooks/useGeolocation';
@@ -9,6 +9,21 @@ import { MinyanCard } from '@/components/MinyanCard';
 import { CreateMinyanDialog } from '@/components/CreateMinyanDialog';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+
+// Mock users database
+const mockUsers: Record<string, { name: string; avatar: string }> = {
+  'user1': { name: 'David Cohen', avatar: 'DC' },
+  'user2': { name: 'Moshe Levy', avatar: 'ML' },
+  'user3': { name: 'Avraham Ben', avatar: 'AB' },
+  'user4': { name: 'Yosef Mizrahi', avatar: 'YM' },
+  'user5': { name: 'Chaim Peretz', avatar: 'CP' },
+  'user6': { name: 'Shlomo Amar', avatar: 'SA' },
+  'user7': { name: 'Yaakov Israel', avatar: 'YI' },
+  'user8': { name: 'Isaac Ben', avatar: 'IB' },
+  'user9': { name: 'Aaron Cohen', avatar: 'AC' },
+  'user10': { name: 'Simon Levy', avatar: 'SL' },
+  'current_user': { name: 'Moi', avatar: 'MOI' },
+};
 
 // Mock data for demonstration
 const mockMinyans: Minyan[] = [
@@ -82,6 +97,14 @@ export default function Index() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [filter, setFilter] = useState<typeof prayerFilters[number]>('all');
   const [userParticipations, setUserParticipations] = useState<Set<string>>(new Set());
+  const [notificationsEnabled, setNotificationsEnabled] = useState<Set<string>>(new Set());
+
+  // Request browser notification permission
+  useEffect(() => {
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
+  }, []);
 
   // Check for nearby minyans and show alerts
   useEffect(() => {
@@ -107,6 +130,23 @@ export default function Index() {
     });
   }, [position, minyans, userParticipations, t]);
 
+  // Send notification when table reaches 10
+  const sendCompletionNotification = useCallback((minyan: Minyan) => {
+    // Browser notification
+    if ('Notification' in window && Notification.permission === 'granted') {
+      new Notification('🎉 Minyan complet !', {
+        body: `La table à ${minyan.location} a atteint 10 personnes. Le Minyan peut avoir lieu !`,
+        icon: '/vite.svg',
+      });
+    }
+    
+    // Toast notification
+    toast.success('🎉 Table complète !', {
+      description: `${minyan.location} - 10/10 personnes. Le Minyan est validé !`,
+      duration: 5000,
+    });
+  }, []);
+
   const filteredMinyans = useMemo(() => {
     let result = minyans;
 
@@ -130,10 +170,12 @@ export default function Index() {
       });
     }
 
-    // Sort funerals first
+    // Sort funerals first, then by completion status
     result = result.sort((a, b) => {
       if (a.prayer_type === 'levaya' && b.prayer_type !== 'levaya') return -1;
       if (b.prayer_type === 'levaya' && a.prayer_type !== 'levaya') return 1;
+      if (a.status === 'complete' && b.status !== 'complete') return -1;
+      if (b.status === 'complete' && a.status !== 'complete') return 1;
       return 0;
     });
 
@@ -161,37 +203,67 @@ export default function Index() {
       minyans.map((m) => {
         if (m.id === minyanId) {
           const newParticipants = [...m.participants, 'current_user'];
-          // Si on atteint 10, la table est complète
           const newStatus = newParticipants.length >= 10 ? 'complete' : 'open';
-          if (newStatus === 'complete' && m.status !== 'complete') {
-            toast.success('🎉 Table complète ! 10/10 - Le Minyan peut avoir lieu !');
-          }
-          return { 
+          const updatedMinyan = { 
             ...m, 
             participants: newParticipants,
             status: newStatus
           };
+          
+          // If just reached 10, send notification
+          if (newStatus === 'complete' && m.status !== 'complete') {
+            sendCompletionNotification(updatedMinyan);
+          }
+          
+          return updatedMinyan;
         }
         return m;
       })
     );
     setUserParticipations(new Set([...userParticipations, minyanId]));
-    toast.success('Vous êtes à la table !');
+    toast.success('Vous êtes assis à la table !');
   };
 
   const handleLeave = (minyanId: string) => {
     setMinyans(
-      minyans.map((m) =>
-        m.id === minyanId
-          ? { ...m, participants: m.participants.filter((p) => p !== 'current_user') }
-          : m
-      )
+      minyans.map((m) => {
+        if (m.id === minyanId) {
+          const newParticipants = m.participants.filter((p) => p !== 'current_user');
+          return {
+            ...m,
+            participants: newParticipants,
+            status: newParticipants.length >= 10 ? 'complete' : 'open',
+          };
+        }
+        return m;
+      })
     );
     const newParticipations = new Set(userParticipations);
     newParticipations.delete(minyanId);
     setUserParticipations(newParticipations);
-    toast.success('Vous avez quitté le Minyan');
+    toast.success('Vous avez quitté la table');
   };
+
+  const toggleNotification = (minyanId: string) => {
+    const newNotifications = new Set(notificationsEnabled);
+    if (newNotifications.has(minyanId)) {
+      newNotifications.delete(minyanId);
+      toast.info('Notifications désactivées pour cette table');
+    } else {
+      newNotifications.add(minyanId);
+      toast.success('Vous serez notifié quand la table atteindra 10 !');
+    }
+    setNotificationsEnabled(newNotifications);
+  };
+
+  // Stats
+  const stats = useMemo(() => {
+    const total = minyans.length;
+    const complete = minyans.filter(m => m.status === 'complete').length;
+    const open = minyans.filter(m => m.status === 'open').length;
+    const myTables = minyans.filter(m => userParticipations.has(m.id)).length;
+    return { total, complete, open, myTables };
+  }, [minyans, userParticipations]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -202,6 +274,26 @@ export default function Index() {
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold mb-2">{t('app.title')}</h1>
           <p className="text-muted-foreground">{t('app.subtitle')}</p>
+          
+          {/* Stats */}
+          <div className="flex flex-wrap justify-center gap-4 mt-4">
+            <Badge variant="outline" className="px-3 py-1">
+              <Users className="h-3 w-3 mr-1" />
+              {stats.total} tables
+            </Badge>
+            <Badge variant="default" className="px-3 py-1 bg-green-100 text-green-800">
+              {stats.complete} validées
+            </Badge>
+            <Badge variant="secondary" className="px-3 py-1">
+              {stats.open} en cours
+            </Badge>
+            {stats.myTables > 0 && (
+              <Badge variant="outline" className="px-3 py-1 border-primary">
+                {stats.myTables} mes tables
+              </Badge>
+            )}
+          </Badge>
+
           {position && (
             <Badge variant="outline" className="mt-2">
               <MapPin className="h-3 w-3 mr-1" />
@@ -250,6 +342,9 @@ export default function Index() {
               onJoin={handleJoin}
               onLeave={handleLeave}
               isParticipant={userParticipations.has(minyan.id)}
+              onToggleNotification={() => toggleNotification(minyan.id)}
+              isNotificationEnabled={notificationsEnabled.has(minyan.id)}
+              users={mockUsers}
             />
           ))}
         </div>
