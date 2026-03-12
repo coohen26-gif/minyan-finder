@@ -17,12 +17,16 @@
     "funeral": "Enterrement"
   },
   "minyan": {
-    "create": "Créer un Minyan",
-    "join": "Rejoindre",
-    "leave": "Quitter",
+    "create": "Créer une table",
+    "join": "S'asseoir à la table",
+    "leave": "Quitter la table",
     "distance": "à {{distance}}",
     "nearby": "Près de moi",
-    "urgent": "Urgent"
+    "urgent": "Urgent",
+    "table": "Table de Minyan",
+    "seats": "places",
+    "validated": "Minyan validé !",
+    "missing": "manquants"
   },
   "alerts": {
     "nearbyTitle": "Minyan à proximité !",

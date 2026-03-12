@@ -12,6 +12,9 @@ export interface Minyan {
   created_at: string;
   participants: string[];
   is_funeral?: boolean;
+  is_permanent: boolean; // true = récurrent, false = ponctuel
+  status: 'open' | 'complete' | 'cancelled'; // open = en cours, complete = 10 atteint
+  min_required: number; // toujours 10 pour un Minyan
 }
 
 export interface MinyanRequest {
@@ -21,6 +24,7 @@ export interface MinyanRequest {
   longitude: number;
   time: string;
   notes?: string;
+  is_permanent: boolean;
 }
 
 export interface Synagogue {

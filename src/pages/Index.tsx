@@ -22,18 +22,24 @@ const mockMinyans: Minyan[] = [
     notes: 'Synagogue Nazareth',
     created_by: 'user1',
     created_at: new Date().toISOString(),
-    participants: ['user1', 'user2'],
+    participants: ['user1', 'user2', 'user3', 'user4', 'user5', 'user6', 'user7'],
+    is_permanent: true,
+    status: 'open',
+    min_required: 10,
   },
   {
     id: '2',
     prayer_type: 'mincha',
-    location: '45 Avenue Victor Hugo, Paris',
+    location: 'Bureau - 45 Avenue Victor Hugo, Paris',
     latitude: 48.8589,
     longitude: 2.3544,
     time: new Date(Date.now() + 7200000).toISOString(),
     created_by: 'user3',
     created_at: new Date().toISOString(),
-    participants: ['user3'],
+    participants: ['user3', 'user8', 'user9', 'user10', 'user11'],
+    is_permanent: false,
+    status: 'open',
+    min_required: 10,
   },
   {
     id: '3',
@@ -45,7 +51,25 @@ const mockMinyans: Minyan[] = [
     notes: 'Urgent - Besoin de 10 hommes',
     created_by: 'user4',
     created_at: new Date().toISOString(),
-    participants: ['user4', 'user5', 'user6'],
+    participants: ['user4', 'user5', 'user6', 'user12', 'user13', 'user14', 'user15', 'user16', 'user17', 'user18'],
+    is_permanent: false,
+    status: 'complete',
+    min_required: 10,
+  },
+  {
+    id: '4',
+    prayer_type: 'maariv',
+    location: 'Salle de réunion - WeWork La Fayette',
+    latitude: 48.875,
+    longitude: 2.35,
+    time: new Date(Date.now() + 10800000).toISOString(),
+    notes: 'Table de bureau - tous les jours',
+    created_by: 'user19',
+    created_at: new Date().toISOString(),
+    participants: ['user19', 'user20', 'user21', 'user22', 'user23', 'user24', 'user25', 'user26', 'user27', 'user28', 'user29', 'user30'],
+    is_permanent: true,
+    status: 'complete',
+    min_required: 10,
   },
 ];
 
@@ -123,22 +147,36 @@ export default function Index() {
       created_by: 'current_user',
       created_at: new Date().toISOString(),
       participants: ['current_user'],
+      is_permanent: data.is_permanent,
+      status: 'open',
+      min_required: 10,
     };
     setMinyans([newMinyan, ...minyans]);
     setUserParticipations(new Set([...userParticipations, newMinyan.id]));
-    toast.success('Minyan créé avec succès !');
+    toast.success('Table de Minyan créée ! 10 personnes nécessaires.');
   };
 
   const handleJoin = (minyanId: string) => {
     setMinyans(
-      minyans.map((m) =>
-        m.id === minyanId
-          ? { ...m, participants: [...m.participants, 'current_user'] }
-          : m
-      )
+      minyans.map((m) => {
+        if (m.id === minyanId) {
+          const newParticipants = [...m.participants, 'current_user'];
+          // Si on atteint 10, la table est complète
+          const newStatus = newParticipants.length >= 10 ? 'complete' : 'open';
+          if (newStatus === 'complete' && m.status !== 'complete') {
+            toast.success('🎉 Table complète ! 10/10 - Le Minyan peut avoir lieu !');
+          }
+          return { 
+            ...m, 
+            participants: newParticipants,
+            status: newStatus
+          };
+        }
+        return m;
+      })
     );
     setUserParticipations(new Set([...userParticipations, minyanId]));
-    toast.success('Vous avez rejoint le Minyan !');
+    toast.success('Vous êtes à la table !');
   };
 
   const handleLeave = (minyanId: string) => {
