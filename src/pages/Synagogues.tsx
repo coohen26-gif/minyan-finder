@@ -9,6 +9,7 @@ import { Synagogue } from '@/lib/api';
 import { useGeolocation, calculateDistance, formatDistance } from '@/hooks/useGeolocation';
 import { LocationSelector } from '@/components/LocationSelector';
 import synagoguesIsrael from '@/data/synagogues_israel.json';
+import synagoguesMore from '@/data/synagogues_more.json';
 
 // Sample synagogue data
 const synagoguesData: Synagogue[] = [
@@ -70,8 +71,12 @@ const synagoguesData: Synagogue[] = [
   },
 ];
 
-// Merge with Israel synagogues
-const allSynagogues: Synagogue[] = [...synagoguesData, ...(synagoguesIsrael as Synagogue[])];
+// Merge all synagogues
+const allSynagogues: Synagogue[] = [
+  ...synagoguesData, 
+  ...(synagoguesIsrael as Synagogue[]),
+  ...(synagoguesMore as Synagogue[])
+];
 
 export default function Synagogues() {
   const { t } = useTranslation();

@@ -1,0 +1,308 @@
+[
+  {
+    "id": "il_031",
+    "name": "Grande Synagogue de Jérusalem",
+    "address": "56 Rue King George, Rehavia",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7767,
+    "longitude": 35.2125,
+    "phone": "+972 2-623-0628",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:00", "08:00"],
+      "mincha": ["13:00", "17:30", "18:30"],
+      "maariv": ["19:00", "20:30", "22:00"]
+    }
+  },
+  {
+    "id": "il_032",
+    "name": "Synagogue Hurva (Beit Haknesset HaHurva)",
+    "address": "17 Rue Ha'Yehudim, Vieille Ville, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7756,
+    "longitude": 35.2317,
+    "phone": "+972 2-626-5906",
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_033",
+    "name": "Grande Synagogue de Belz",
+    "address": "7 Rue Binat Yisakhar",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7856,
+    "longitude": 35.2034,
+    "phone": "+972 2-501-8900",
+    "denomination": "chassidic",
+    "minyan_times": {
+      "shacharit": ["05:30", "06:30", "07:30", "08:30"],
+      "mincha": ["12:30", "14:00", "16:00", "18:00"],
+      "maariv": ["18:45", "20:00", "21:30"]
+    }
+  },
+  {
+    "id": "il_034",
+    "name": "Synagogue Italienne",
+    "address": "27 Rue Hillel, Centre-Ville",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7789,
+    "longitude": 35.2189,
+    "phone": "+972 2-624-1610",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_035",
+    "name": "Centre Yochanan Ben Zakai (Quatre Synagogues)",
+    "address": "4 Rue Beit El, Vieille Ville, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7745,
+    "longitude": 35.2323,
+    "phone": "+972 2-628-0592",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:00", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_036",
+    "name": "Beit Knesset Moussaieff Séfarade",
+    "address": "25 Rue Yoel, Quartier Boukharian",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7923,
+    "longitude": 35.2123,
+    "phone": "+972 2-582-7276",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["05:45", "06:45", "07:45", "08:45"],
+      "mincha": ["12:45", "14:00", "15:30", "17:45"],
+      "maariv": ["18:30", "20:00", "21:30"]
+    }
+  },
+  {
+    "id": "il_037",
+    "name": "Beit Knesset Yeshurun",
+    "address": "44 Rue King George, Rehavia",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7785,
+    "longitude": 35.2167,
+    "phone": "+972 2-624-3492",
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_038",
+    "name": "Synagogue Ohel Avraham (Haïfa)",
+    "address": "90 Derech Tzarfat",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8189,
+    "longitude": 34.9989,
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_039",
+    "name": "Beit Chabad Haïfa",
+    "address": "17 Rue Hamelech Yeoshafat",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8098,
+    "longitude": 34.9876,
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_040",
+    "name": "Synagogue Moriah (Conservative)",
+    "address": "7 Rue Horev, Haïfa",
+    "country": "Israel",
+    "latitude": 32.8156,
+    "longitude": 34.9923,
+    "denomination": "conservative",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_041",
+    "name": "Synagogue Or Hadash (Réformée)",
+    "address": "55 Rue Hentke, Haïfa",
+    "country": "Israel",
+    "latitude": 32.8234,
+    "longitude": 35.0012,
+    "denomination": "reform",
+    "minyan_times": {
+      "shacharit": ["09:00"],
+      "mincha": ["17:00"],
+      "maariv": ["18:30"]
+    }
+  },
+  {
+    "id": "il_042",
+    "name": "Congregation Eshel Avraham (Beer Sheva)",
+    "address": "72 Boulevard Yerushalaim",
+    "city": "Beer Sheva",
+    "country": "Israel",
+    "latitude": 31.2520,
+    "longitude": 34.7915,
+    "phone": "+972 8-643-0123",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_043",
+    "name": "Centre Chabad de Be'er Sheva",
+    "address": "2 Lubavicher Rebbe Lane",
+    "city": "Beer Sheva",
+    "country": "Israel",
+    "latitude": 31.2456,
+    "longitude": 34.7823,
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_044",
+    "name": "Synagogue Siach Israel (Eilat)",
+    "address": "180 Sderot Sheshet Hayamim",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5581,
+    "longitude": 34.9482,
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_045",
+    "name": "Synagogue Hayahalom (Eilat)",
+    "address": "5 Rue Nakhshon",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5512,
+    "longitude": 34.9356,
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_046",
+    "name": "Chabad Eilat",
+    "address": "6 Rue Roded",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5623,
+    "longitude": 34.9512,
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_047",
+    "name": "Grande Synagogue de Herzliya",
+    "address": "1 Sderot Ben Gurion",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1663,
+    "longitude": 34.8433,
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_048",
+    "name": "Synagogue HaRav Kook (Herzliya)",
+    "address": "89 Rue HaRav Kook",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1589,
+    "longitude": 34.8389,
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_049",
+    "name": "Chabad Herzliya",
+    "address": "37 Rue Haatzmaut",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1612,
+    "longitude": 34.8412,
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_050",
+    "name": "Synagogue Ohel Moshe (Herzliya)",
+    "address": "33 Ben Eliezer Arie",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1645,
+    "longitude": 34.8456,
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:30", "08:00"],
+      "mincha": ["13:00", "18:30"],
+      "maariv": ["19:30"]
+    }
+  }
+]
