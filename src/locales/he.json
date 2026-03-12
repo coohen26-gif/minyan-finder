@@ -1,0 +1,44 @@
+{
+  "app": {
+    "title": "מנין פיינדר",
+    "subtitle": "מצא מנין לידך"
+  },
+  "nav": {
+    "home": "בית",
+    "synagogues": "בתי כנסת",
+    "login": "התחברות",
+    "logout": "התנתקות"
+  },
+  "prayer": {
+    "shacharit": "שחרית",
+    "mincha": "מנחה",
+    "maariv": "ערבית",
+    "levaya": "לויה ⚫",
+    "funeral": "הלוויה"
+  },
+  "minyan": {
+    "create": "צור מנין",
+    "join": "הצטרף",
+    "leave": "עזוב",
+    "distance": "במרחק {{distance}}",
+    "nearby": "קרוב אלי",
+    "urgent": "דחוף"
+  },
+  "alerts": {
+    "nearbyTitle": "מנין בקרבת מקום!",
+    "nearbyMessage": "נוצר מנין במרחק {{distance}} ממיקומך"
+  },
+  "form": {
+    "prayerType": "סוג תפילה",
+    "location": "מיקום",
+    "time": "שעה",
+    "notes": "הערות",
+    "submit": "צור"
+  },
+  "synagogue": {
+    "title": "מדריך בתי כנסת",
+    "search": "חפש...",
+    "filter": "סנן לפי",
+    "add": "הוסף בית כנסת"
+  }
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "1",
+    "name": "Synagogue Nazareth",
+    "address": "15 Rue Nazareth",
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8566,
+    "longitude": 2.3522,
+    "phone": "+33 1 42 72 08 88",
+    "website": "https://synagogue-nazareth.org",
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "2",
+    "name": "Synagogue des Tournelles",
+    "address": "21 bis Rue des Tournelles",
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8555,
+    "longitude": 2.3678,
+    "phone": "+33 1 42 72 08 88",
+    "denomination": "sephardi"
+  },
+  {
+    "id": "3",
+    "name": "Synagogue de la Victoire",
+    "address": "44 Rue de la Victoire",
+    "city": "Paris",
+    "country": "France",
+    "latitude": 48.8744,
+    "longitude": 2.3322,
+    "phone": "+33 1 45 26 95 36",
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "4",
+    "name": "Great Synagogue of Jerusalem",
+    "address": "56 King George Street",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7767,
+    "longitude": 35.2345,
+    "denomination": "mixed"
+  },
+  {
+    "id": "5",
+    "name": "Western Wall",
+    "address": "Old City",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7767,
+    "longitude": 35.2345,
+    "denomination": "mixed"
+  },
+  {
+    "id": "6",
+    "name": "Park East Synagogue",
+    "address": "163 East 67th Street",
+    "city": "New York",
+    "country": "USA",
+    "latitude": 40.7678,
+    "longitude": -73.9645,
+    "phone": "+1 212-737-2700",
+    "website": "https://parkeastsynagogue.org",
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "7",
+    "name": "Congregation Shearith Israel",
+    "address": "8 West 70th Street",
+    "city": "New York",
+    "country": "USA",
+    "latitude": 40.7734,
+    "longitude": -73.9778,
+    "phone": "+1 212-873-0300",
+    "denomination": "sephardi"
+  },
+  {
+    "id": "8",
+    "name": "Central Synagogue",
+    "address": "652 Lexington Avenue",
+    "city": "New York",
+    "country": "USA",
+    "latitude": 40.759,
+    "longitude": -73.9712,
+    "phone": "+1 212-838-5122",
+    "website": "https://centralsynagogue.org",
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "9",
+    "name": "New West End Synagogue",
+    "address": "Bayswater Road",
+    "city": "London",
+    "country": "UK",
+    "latitude": 51.5074,
+    "longitude": -0.1278,
+    "phone": "+44 20 7723 4404",
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "10",
+    "name": "Bevis Marks Synagogue",
+    "address": "Bevis Marks",
+    "city": "London",
+    "country": "UK",
+    "latitude": 51.5145,
+    "longitude": -0.0794,
+    "phone": "+44 20 7626 1274",
+    "denomination": "sephardi"
+  }
+]

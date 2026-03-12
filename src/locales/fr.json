@@ -1,0 +1,44 @@
+{
+  "app": {
+    "title": "Minyan Finder",
+    "subtitle": "Trouvez un Minyan près de chez vous"
+  },
+  "nav": {
+    "home": "Accueil",
+    "synagogues": "Synagogues",
+    "login": "Connexion",
+    "logout": "Déconnexion"
+  },
+  "prayer": {
+    "shacharit": "Cha'harit",
+    "mincha": "Min'ha",
+    "maariv": "Arvit",
+    "levaya": "Levaya ⚫",
+    "funeral": "Enterrement"
+  },
+  "minyan": {
+    "create": "Créer un Minyan",
+    "join": "Rejoindre",
+    "leave": "Quitter",
+    "distance": "à {{distance}}",
+    "nearby": "Près de moi",
+    "urgent": "Urgent"
+  },
+  "alerts": {
+    "nearbyTitle": "Minyan à proximité !",
+    "nearbyMessage": "Un Minyan a été créé à {{distance}} de votre position"
+  },
+  "form": {
+    "prayerType": "Type de prière",
+    "location": "Lieu",
+    "time": "Heure",
+    "notes": "Notes",
+    "submit": "Créer"
+  },
+  "synagogue": {
+    "title": "Annuaire des Synagogues",
+    "search": "Rechercher...",
+    "filter": "Filtrer par",
+    "add": "Ajouter une synagogue"
+  }
+}
