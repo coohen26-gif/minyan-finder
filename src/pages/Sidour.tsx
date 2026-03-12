@@ -29,6 +29,10 @@ const categories: Record<string, { label_fr: string; label_en: string; icon: str
   meals: { label_fr: 'Repas', label_en: 'Meals', icon: '🍞' },
   mourning: { label_fr: 'Deuil', label_en: 'Mourning', icon: '⚫' },
   closing: { label_fr: 'Clôture', label_en: 'Closing', icon: '✨' },
+  travel: { label_fr: 'Voyage', label_en: 'Travel', icon: '✈️' },
+  tehilim: { label_fr: 'Tehilim (Psaumes)', label_en: 'Psalms', icon: '📜' },
+  special: { label_fr: 'Prières spéciales', label_en: 'Special Prayers', icon: '⭐' },
+  torah: { label_fr: 'Torah', label_en: 'Torah', icon: '📜' },
 };
 
 export default function Sidour() {

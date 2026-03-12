@@ -108,5 +108,170 @@
     "text_phonetic": "Baruch ata Adonai Eloheinu Melech haolam hazan et haolam kulo betuvo bechen bechesed uverachamim...",
     "translation_fr": "Béni sois-Tu, Éternel notre Dieu, Roi de l'univers, qui nourrit le monde entier avec Ta bonté, avec grâce, avec bonté et miséricorde...",
     "translation_en": "Blessed are You, Lord our God, King of the universe, who feeds the entire world with His goodness, with grace, kindness and mercy..."
+  },
+  {
+    "id": "tefilat_haderech",
+    "title_he": "תפילת הדרך",
+    "title_fr": "Tefilat Haderech (Prière du voyageur)",
+    "title_en": "Tefilat Haderech (Traveler's Prayer)",
+    "category": "travel",
+    "text_he": "יהי רצון מלפניך יהוה אלהינו שתוליכנו לשלום ותצעידנו לשלום ותדבריכנו לשלום ותשמיענו לשלום...",
+    "text_phonetic": "Yehi ratzon milfanecha Adonai Eloheinu shetolicheinu leshalom vetatzidenu leshalom vetadbrichenu leshalom vetashmieinu leshalom...",
+    "translation_fr": "Qu'il soit agréable devant Toi, Éternel notre Dieu, de nous conduire en paix, de nous faire marcher en paix, de nous faire parler en paix, de nous faire entendre en paix...",
+    "translation_en": "May it be Your will, Lord our God, to lead us in peace, to guide our steps in peace, to let us speak in peace, to let us hear in peace..."
+  },
+  {
+    "id": "tehilim_20",
+    "title_he": "תהילים כ",
+    "title_fr": "Tehilim 20 (Pour le succès)",
+    "title_en": "Psalm 20 (For Success)",
+    "category": "tehilim",
+    "text_he": "למנצח מזמור לדוד יענך יהוה ביום צרה ישגבך שם אלהי יעקב...",
+    "text_phonetic": "Lamnatseach mizmor leDavid yaanecha Adonai beyom tzara yesagevcha shem Elohei Yaakov...",
+    "translation_fr": "Au chef des chantres. Psaume de David. Que l'Éternel te réponde au jour de la détresse, que le nom du Dieu de Jacob te protège...",
+    "translation_en": "For the director of music. A psalm of David. May the Lord answer you when you are in distress; may the name of the God of Jacob protect you..."
+  },
+  {
+    "id": "tehilim_23",
+    "title_he": "תהילים כג",
+    "title_fr": "Tehilim 23 (Le Seigneur est mon berger)",
+    "title_en": "Psalm 23 (The Lord is my Shepherd)",
+    "category": "tehilim",
+    "text_he": "מזמור לדוד יהוה רעי לא אחסר בנאות דשא ירביצני על מי מנוחות ינהלני...",
+    "text_phonetic": "Mizmor leDavid Adonai roi lo echsar beneot deshe yarvitseni al mei menuchot yenahaleni...",
+    "translation_fr": "Psaume de David. L'Éternel est mon berger, je ne manquerai de rien. Il me fait reposer dans de verts pâturages, Il me dirige près des eaux paisibles...",
+    "translation_en": "A psalm of David. The Lord is my shepherd, I lack nothing. He makes me lie down in green pastures, he leads me beside quiet waters..."
+  },
+  {
+    "id": "tehilim_121",
+    "title_he": "תהילים קכא",
+    "title_fr": "Tehilim 121 (J'élève mes yeux vers les montagnes)",
+    "title_en": "Psalm 121 (I lift up my eyes to the mountains)",
+    "category": "tehilim",
+    "text_he": "שיר למעלות אשא עיני אל ההרים מאין יבוא עזרי עזרי מעם יהוה עושה שמים וארץ...",
+    "text_phonetic": "Shir lamaalot esa enei el heharim meayin yavo ezri ezri meim Adonai oseh shamayim vaaretz...",
+    "translation_fr": "Cantique des degrés. J'élève mes yeux vers les montagnes : d'où me viendra le secours ? Le secours me vient de l'Éternel, qui a fait les cieux et la terre...",
+    "translation_en": "A song of ascents. I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth..."
+  },
+  {
+    "id": "asher_yatzar",
+    "title_he": "אשר יצר",
+    "title_fr": "Asher Yatzar (Bénédiction après les besoins)",
+    "title_en": "Asher Yatzar (Blessing after relieving oneself)",
+    "category": "morning",
+    "text_he": "ברוך אתה יהוה אלהינו מלך העולם אשר יצר את האדם בחכמה וברא בו נקבים נקבים חלולים חלולים...",
+    "text_phonetic": "Baruch ata Adonai Eloheinu Melech haolam asher yatzar et haadam bechachma uvara bo nekabim nekabim chalulim chalulim...",
+    "translation_fr": "Béni sois-Tu, Éternel notre Dieu, Roi de l'univers, qui a formé l'homme avec sagesse et créé en lui des ouvertures et des cavités...",
+    "translation_en": "Blessed are You, Lord our God, King of the universe, who formed man with wisdom and created in him openings and hollows..."
+  },
+  {
+    "id": "elohai_neshama",
+    "title_he": "אלהי נשמה",
+    "title_fr": "Elohai Neshama (Mon Dieu, l'âme)",
+    "title_en": "Elohai Neshama (My God, the soul)",
+    "category": "morning",
+    "text_he": "אלהי נשמה שנתת בי טהורה היא אתה בראתה אתה יצרתה אתה נפחתה בי...",
+    "text_phonetic": "Elohai neshama shenatata bi tehora hi ata berata ata yatzarta ata nafachta bi...",
+    "translation_fr": "Mon Dieu, l'âme que Tu as mise en moi est pure. C'est Toi qui l'as créée, c'est Toi qui l'as formée, c'est Toi qui l'as insufflée en moi...",
+    "translation_en": "My God, the soul You have given me is pure. You created it, You formed it, You breathed it into me..."
+  },
+  {
+    "id": "hanoten_teshua",
+    "title_he": "הנותן תשועה",
+    "title_fr": "Hanoten Teshua (Pour l'État d'Israël)",
+    "title_en": "Hanoten Teshua (For the State of Israel)",
+    "category": "special",
+    "text_he": "אבינו שבשמים צור ישראל וגואלו ברך את מדינת ישראל ראשית צמיחת גאולתנו...",
+    "text_phonetic": "Avinu shebashamim tzur Yisrael vegoalo barech et medinat Yisrael reishit tzmichat geulatenu...",
+    "translation_fr": "Notre Père qui es aux cieux, Rocher d'Israël et son Rédempteur, bénis l'État d'Israël, commencement de la floraison de notre rédemption...",
+    "translation_en": "Our Father in heaven, Rock of Israel and its Redeemer, bless the State of Israel, the beginning of the flowering of our redemption..."
+  },
+  {
+    "id": "mi_sheberach",
+    "title_he": "מי שברך",
+    "title_fr": "Mi Sheberach (Pour la guérison)",
+    "title_en": "Mi Sheberach (For healing)",
+    "category": "special",
+    "text_he": "מי שברך אבותינו אברהם יצחק ויעקב הוא יברך וירפא את החולה...",
+    "text_phonetic": "Mi sheberach avoteinu Avraham Yitzchak veYaakov hu yevarech verafa et hacholeh...",
+    "translation_fr": "Celui qui a béni nos pères Abraham, Isaac et Jacob, qu'Il bénisse et guérisse le malade...",
+    "translation_en": "He who blessed our fathers Abraham, Isaac and Jacob, may He bless and heal the sick..."
+  },
+  {
+    "id": "yigdal",
+    "title_he": "יגדל",
+    "title_fr": "Yigdal (Exalté soit le Dieu vivant)",
+    "title_en": "Yigdal (May the living God be exalted)",
+    "category": "closing",
+    "text_he": "יגדל אלהים חי וישתבח נטע זמנים בטובו שפתי משפרות ושוננות...",
+    "text_phonetic": "Yigdal Elohim chai veyishtavach nata zmanim betuvo sfatei mesaperot vesonenot...",
+    "translation_fr": "Exalté soit le Dieu vivant et loué, qui plante les temps dans Sa bonté. Des lèvres racontent et répètent...",
+    "translation_en": "May the living God be exalted and praised, who plants the times in His goodness. Lips tell and repeat..."
+  },
+  {
+    "id": "adon_olam",
+    "title_he": "אדון עולם",
+    "title_fr": "Adon Olam (Maître du monde)",
+    "title_en": "Adon Olam (Master of the World)",
+    "category": "morning",
+    "text_he": "אדון עולם אשר מלך בטרם כל יציר נברא לעת נעשה בחפצו כל אזי מלך שמו נקרא...",
+    "text_phonetic": "Adon olam asher malach beterem kol yetzir nivra leat naaseh becheftzo kol azai melech shemo nikra...",
+    "translation_fr": "Maître du monde, qui a régné avant que toute créature soit formée. Au moment où tout fut fait selon Sa volonté, alors Son nom fut appelé Roi...",
+    "translation_en": "Master of the world, who reigned before any creature was formed. When all was made according to His will, then His name was called King..."
+  },
+  {
+    "id": "shir_hamaalot",
+    "title_he": "שיר המעלות",
+    "title_fr": "Shir Hamaalot (Cantique des degrés)",
+    "title_en": "Shir Hamaalot (Song of Ascents)",
+    "category": "special",
+    "text_he": "שיר המעלות אשא עיני אל ההרים מאין יבוא עזרי עזרי מעם יהוה עושה שמים וארץ...",
+    "text_phonetic": "Shir hamaalot esa enei el heharim meayin yavo ezri ezri meim Adonai oseh shamayim vaaretz...",
+    "translation_fr": "Cantique des degrés. J'élève mes yeux vers les montagnes : d'où me viendra le secours ? Mon secours vient de l'Éternel, qui a fait les cieux et la terre...",
+    "translation_en": "A song of ascents. I lift up my eyes to the mountains—where does my help come from? My help comes from the Lord, the Maker of heaven and earth..."
+  },
+  {
+    "id": "brich_shmei",
+    "title_he": "בריך שמיה",
+    "title_fr": "Brich Shmei (Ouverture de la Torah)",
+    "title_en": "Brich Shmei (Opening the Torah)",
+    "category": "torah",
+    "text_he": "בריך שמיה דקודשא בריך הוא לעלם ולעלמי עלמיא יתברך יתברך...",
+    "text_phonetic": "Brich shemeih dekudsha brich hu leolam ulealmei almaya yitbarach yitbarach...",
+    "translation_fr": "Béni soit le Nom du Saint, béni soit-Il pour toujours et à jamais. Qu'Il soit béni, qu'Il soit béni...",
+    "translation_en": "Blessed be the Name of the Holy One, blessed be He for ever and ever. May He be blessed, may He be blessed..."
+  },
+  {
+    "id": "etz_chaim",
+    "title_he": "עץ חיים",
+    "title_fr": "Etz Chaim (Arbre de vie - après la Torah)",
+    "title_en": "Etz Chaim (Tree of life - after Torah)",
+    "category": "torah",
+    "text_he": "עץ חיים היא למחזיקים בה ותומכיה מאשר כי בה ימצאו חיים וארך ימים...",
+    "text_phonetic": "Etz chaim hi lamachazikim ba vetomcheha meushar ki va yimtzu chaim veorech yamim...",
+    "translation_fr": "Elle est un arbre de vie pour ceux qui la saisissent, et ceux qui la soutiennent sont heureux. Car en elle on trouve la vie et la longueur des jours...",
+    "translation_en": "It is a tree of life to those who hold fast to it, and those who support it are happy. For in it one finds life and length of days..."
+  },
+  {
+    "id": "shalom_aleichem",
+    "title_he": "שלום עליכם",
+    "title_fr": "Shalom Aleichem (Chabbat soir)",
+    "title_en": "Shalom Aleichem (Friday night)",
+    "category": "shabbat",
+    "text_he": "שלום עליכם מלאכי השרת מלאכי עליון ממלך מלכי המלכים הקדוש ברוך הוא...",
+    "text_phonetic": "Shalom aleichem malachei hasharet malachei elyon mimelech malchei hamelachim hakadosh baruch hu...",
+    "translation_fr": "Paix sur vous, anges du service, anges du Très-Haut, du Roi des rois des rois, le Saint, béni soit-Il...",
+    "translation_en": "Peace upon you, ministering angels, angels of the Most High, from the King of kings of kings, the Holy One, blessed be He..."
+  },
+  {
+    "id": "eshet_chayil",
+    "title_he": "אשת חיל",
+    "title_fr": "Eshet Chayil (Femme de valeur)",
+    "title_en": "Eshet Chayil (Woman of Valor)",
+    "category": "shabbat",
+    "text_he": "אשת חיל מי ימצא ורחק מפנינים מכרה בטח בה לב בעלה ושלל לא יחסר...",
+    "text_phonetic": "Eshet chayil mi yimtza verachak mpeninim michra batach ba lev baala veshalal lo yechsar...",
+    "translation_fr": "Femme de valeur, qui la trouvera ? Loin de perles est son prix. Le cœur de son mari a confiance en elle, et il ne manquera pas de butin...",
+    "translation_en": "A woman of valor, who can find? Her worth is far above rubies. The heart of her husband trusts in her, and he will have no lack of gain..."
   }
 ]
