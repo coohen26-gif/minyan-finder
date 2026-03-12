@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { X, Send, BookOpen, AlertTriangle, Loader2 } from 'lucide-react';
+import { X, Send, BookOpen, AlertTriangle, Loader2, WifiOff, Search } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { searchHalakha, HalakhaEntry } from '@/data/halakhaDatabase';
 
 interface Message {
   id: string;
@@ -13,6 +14,7 @@ interface Message {
   content: string;
   sources?: string[];
   isLoading?: boolean;
+  fromDatabase?: boolean;
 }
 
 interface RabbiChatProps {
@@ -78,7 +80,23 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [databaseResults, setDatabaseResults] = useState<HalakhaEntry[]>([]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // Monitor online/offline status
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+    
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+    
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -143,7 +161,36 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
     setInput('');
     setIsLoading(true);
 
-    const response = await callGroqAPI(input.trim());
+    // First, search in local database (works offline)
+    const localResults = searchHalakha(input.trim(), i18n.language as 'fr' | 'he');
+    setDatabaseResults(localResults);
+
+    let response = '';
+    let fromDatabase = false;
+
+    if (localResults.length > 0) {
+      // Use database result
+      const bestMatch = localResults[0];
+      response = i18n.language === 'he' ? bestMatch.answer_he : bestMatch.answer;
+      response += `\n\n📚 מקור: ${bestMatch.source} ${bestMatch.source_ref}`;
+      if (bestMatch.ashkenazi_custom || bestMatch.sephardi_custom) {
+        response += `\n\n🌍 הבדלי מנהגים:`;
+        if (bestMatch.ashkenazi_custom) response += `\n- אשכנז: ${bestMatch.ashkenazi_custom}`;
+        if (bestMatch.sephardi_custom) response += `\n- ספרד: ${bestMatch.sephardi_custom}`;
+      }
+      response += `\n\n⭐ רמה: ${bestMatch.level === 'chova' ? 'חובה (מצווה)' : bestMatch.level === 'choumra' ? 'חומרה (הידור)' : 'מנהג'}`;
+      fromDatabase = true;
+    } else if (isOnline) {
+      // Fall back to API if online and no database match
+      response = await callGroqAPI(input.trim());
+    } else {
+      // Offline with no match
+      response = i18n.language === 'he'
+        ? 'מצטער, אין לי מידע על שאלה זו במאגר המקומי, ואין חיבור לאינטרנט. אנא פנה לרב מקומי.'
+        : i18n.language === 'en'
+        ? 'Sorry, I don\'t have information on this question in my local database, and there is no internet connection. Please consult a local Rabbi.'
+        : 'Désolé, je n\'ai pas d\'information sur cette question dans ma base locale, et il n\'y a pas de connexion Internet. Veuillez consulter un Rav local.';
+    }
 
     setMessages(prev => prev.filter(m => m.id !== 'loading'));
     
@@ -151,6 +198,7 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
       id: (Date.now() + 1).toString(),
       role: 'assistant',
       content: response,
+      fromDatabase,
     };
 
     setMessages(prev => [...prev, assistantMsg]);
@@ -230,10 +278,18 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
                   {msg.isLoading ? (
                     <div className="flex items-center gap-2">
                       <Loader2 className="h-4 w-4 animate-spin" />
-                      {i18n.language === 'he' ? 'חושב...' : i18n.language === 'en' ? 'Thinking...' : 'Réflexion...'}
+                      {i18n.language === 'he' ? 'מחפש...' : i18n.language === 'en' ? 'Searching...' : 'Recherche...'}
                     </div>
                   ) : (
-                    msg.content
+                    <div>
+                      <div className="whitespace-pre-wrap">{msg.content}</div>
+                      {msg.fromDatabase && (
+                        <div className="mt-2 pt-2 border-t border-dashed flex items-center gap-1 text-xs text-muted-foreground">
+                          <BookOpen className="h-3 w-3" />
+                          {i18n.language === 'he' ? 'מתוך מסד הנתונים המקומי' : i18n.language === 'en' ? 'From local database' : 'Depuis la base de données locale'}
+                        </div>
+                      )}
+                    </div>
                   )}
                 </div>
               </div>
@@ -241,6 +297,29 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
           ))}
           <div ref={messagesEndRef} />
         </CardContent>
+
+        {/* Database results suggestion */}
+        {databaseResults.length > 0 && (
+          <div className="px-4 py-2 border-t bg-muted/50">
+            <p className="text-xs text-muted-foreground mb-2">
+              {i18n.language === 'he' ? 'תוצאות ממסד הנתונים:' : i18n.language === 'en' ? 'Database results:' : 'Résultats de la base :'}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {databaseResults.slice(0, 3).map((result) => (
+                <button
+                  key={result.id}
+                  onClick={() => {
+                    setInput(i18n.language === 'he' ? result.question_he : result.question);
+                    handleSend();
+                  }}
+                  className="text-xs bg-background border rounded-full px-3 py-1 hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  {i18n.language === 'he' ? result.question_he : result.question}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Input */}
         <div className="p-4 border-t">
@@ -265,11 +344,22 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
           </div>
           <div className="flex items-center justify-between mt-2">
             <p className="text-xs text-muted-foreground">
-              Powered by Groq AI • Sources vérifiées
+              {isOnline 
+                ? 'Groq AI + Base locale • Sources vérifiées'
+                : i18n.language === 'he' ? 'מצב ללא אינטרנט - מסד נתונים מקומי בלבד' : i18n.language === 'en' ? 'Offline mode - Local database only' : 'Mode hors ligne - Base locale uniquement'
+              }
             </p>
-            <Badge variant="outline" className="text-xs bg-amber-50">
-              🕊️ Service gratuit
-            </Badge>
+            <div className="flex items-center gap-2">
+              {!isOnline && (
+                <Badge variant="secondary" className="text-xs">
+                  <WifiOff className="h-3 w-3 mr-1" />
+                  {i18n.language === 'he' ? 'ללא אינטרנט' : i18n.language === 'en' ? 'Offline' : 'Hors ligne'}
+                </Badge>
+              )}
+              <Badge variant="outline" className="text-xs bg-amber-50">
+                🕊️ {i18n.language === 'he' ? 'שירות חינם' : i18n.language === 'en' ? 'Free service' : 'Service gratuit'}
+              </Badge>
+            </div>
           </div>
         </div>
       </Card>
