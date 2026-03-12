@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Users, Clock, AlertCircle, CheckCircle, Repeat, Building2, Bell, BellOff, ChevronDown, ChevronUp, User } from 'lucide-react';
+import { MapPin, Users, Clock, AlertCircle, CheckCircle, Repeat, Building2, Bell, BellOff, ChevronDown, ChevronUp, User, MessageCircle } from 'lucide-react';
 import { Minyan } from '@/lib/api';
 import { calculateDistance, formatDistance } from '@/hooks/useGeolocation';
 import { cn } from '@/lib/utils';
@@ -15,6 +15,7 @@ interface MinyanCardProps {
   onJoin: (minyanId: string) => void;
   onLeave: (minyanId: string) => void;
   onToggleNotification: () => void;
+  onOpenChat: () => void;
   isParticipant: boolean;
   isNotificationEnabled: boolean;
   users: Record<string, { name: string; avatar: string }>;
@@ -33,6 +34,7 @@ export function MinyanCard({
   onJoin,
   onLeave,
   onToggleNotification,
+  onOpenChat,
   isParticipant,
   isNotificationEnabled,
   users,
@@ -218,6 +220,17 @@ export function MinyanCard({
                 ? `Rejoindre (+${participantCount - minRequired + 1})` 
                 : 'S\'asseoir à la table'}
           </Button>
+          
+          {isParticipant && (
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={onOpenChat}
+              title="Chat du Minyan"
+            >
+              <MessageCircle className="h-4 w-4" />
+            </Button>
+          )}
           
           {!isParticipant && (
             <Button

@@ -7,6 +7,7 @@ import { useGeolocation, calculateDistance } from '@/hooks/useGeolocation';
 import { Header } from '@/components/Header';
 import { MinyanCard } from '@/components/MinyanCard';
 import { CreateMinyanDialog } from '@/components/CreateMinyanDialog';
+import { MinyanChat } from '@/components/MinyanChat';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
@@ -98,6 +99,7 @@ export default function Index() {
   const [filter, setFilter] = useState<typeof prayerFilters[number]>('all');
   const [userParticipations, setUserParticipations] = useState<Set<string>>(new Set());
   const [notificationsEnabled, setNotificationsEnabled] = useState<Set<string>>(new Set());
+  const [chatOpen, setChatOpen] = useState<string | null>(null);
 
   // Request browser notification permission
   useEffect(() => {
@@ -379,8 +381,9 @@ export default function Index() {
               userPosition={position}
               onJoin={handleJoin}
               onLeave={handleLeave}
-              isParticipant={userParticipations.has(minyan.id)}
               onToggleNotification={() => toggleNotification(minyan.id)}
+              onOpenChat={() => setChatOpen(minyan.id)}
+              isParticipant={userParticipations.has(minyan.id)}
               isNotificationEnabled={notificationsEnabled.has(minyan.id)}
               users={mockUsers}
             />
@@ -401,6 +404,16 @@ export default function Index() {
         onClose={() => setIsDialogOpen(false)}
         onSubmit={handleCreateMinyan}
       />
+
+      {chatOpen && (
+        <MinyanChat
+          minyan={minyans.find(m => m.id === chatOpen)!}
+          isOpen={!!chatOpen}
+          onClose={() => setChatOpen(null)}
+          users={mockUsers}
+          currentUserId="current_user"
+        />
+      )}
     </div>
   );
 }
