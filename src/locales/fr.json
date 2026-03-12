@@ -40,5 +40,13 @@
     "search": "Rechercher...",
     "filter": "Filtrer par",
     "add": "Ajouter une synagogue"
+  },
+  "sidour": {
+    "title": "Sidour Patah Eliyahou",
+    "subtitle": "Prières quotidiennes avec translittération phonétique",
+    "hebrew": "Hébreu",
+    "phonetic": "Phonétique",
+    "both": "Les deux",
+    "translation": "Traduction"
   }
 }

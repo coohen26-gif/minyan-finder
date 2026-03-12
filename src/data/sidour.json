@@ -1,0 +1,112 @@
+[
+  {
+    "id": "modeh_ani",
+    "title_he": "מודה אני",
+    "title_fr": "Modeh Ani",
+    "title_en": "Modeh Ani",
+    "category": "morning",
+    "text_he": "מודה אני לפניך מלך חי וקיים שהחזרת בי נשמתי בחמלה רבה אמונתך",
+    "text_phonetic": "Modeh ani lefanecha Melech chai vekayam shehechezarta bi nishmati bechemla raba emunatecha",
+    "translation_fr": "Je Te remercie, Roi vivant et éternel, d'avoir rendu mon âme en moi avec compassion. Ta foi est grande.",
+    "translation_en": "I give thanks before You, living and eternal King, for You have restored my soul within me with compassion. Great is Your faithfulness."
+  },
+  {
+    "id": "shema",
+    "title_he": "שמע ישראל",
+    "title_fr": "Shema Israël",
+    "title_en": "Shema Israel",
+    "category": "morning",
+    "text_he": "שמע ישראל יהוה אלהינו יהוה אחד",
+    "text_phonetic": "Shema Israel Adonai Eloheinu Adonai Echad",
+    "translation_fr": "Écoute Israël, l'Éternel notre Dieu, l'Éternel est Un.",
+    "translation_en": "Hear O Israel, the Lord our God, the Lord is One."
+  },
+  {
+    "id": "amida_1",
+    "title_he": "אבות",
+    "title_fr": "Avot - Première bénédiction",
+    "title_en": "Avot - First Blessing",
+    "category": "amida",
+    "text_he": "ברוך אתה יהוה אלהינו ואלהי אבותינו אלהי אברהם אלהי יצחק ואלהי יעקב...",
+    "text_phonetic": "Baruch ata Adonai Eloheinu veElohei avoteinu Elohei Avraham Elohei Yitzchak veElohei Yaakov...",
+    "translation_fr": "Béni sois-Tu, Éternel notre Dieu et Dieu de nos pères, Dieu d'Abraham, Dieu d'Isaac et Dieu de Jacob...",
+    "translation_en": "Blessed are You, Lord our God and God of our fathers, God of Abraham, God of Isaac, and God of Jacob..."
+  },
+  {
+    "id": "amida_2",
+    "title_he": "גבורות",
+    "title_fr": "Gevurot - Deuxième bénédiction",
+    "title_en": "Gevurot - Second Blessing",
+    "category": "amida",
+    "text_he": "אתה גבור לעולם יהוה מחיה מתים אתה רב להושיע",
+    "text_phonetic": "Ata gibor leolam Adonai mechaye hametim ata rav lehoshea",
+    "translation_fr": "Tu es puissant pour toujours, Éternel. Tu fais revivre les morts, Tu es grand pour sauver.",
+    "translation_en": "You are eternally mighty, Lord. You revive the dead, You are great to save."
+  },
+  {
+    "id": "amida_3",
+    "title_he": "קדושת השם",
+    "title_fr": "Kedushat HaShem - Troisième bénédiction",
+    "title_en": "Kedushat HaShem - Third Blessing",
+    "category": "amida",
+    "text_he": "אתה קדוש ושמך קדוש וקדושים בכל יום יהללוך סלה",
+    "text_phonetic": "Ata kadosh veshimcha kadosh ukedoshim bechol yom yehalelucha sela",
+    "translation_fr": "Tu es saint et Ton nom est saint, et les saints chaque jour Te louent. Sela.",
+    "translation_en": "You are holy and Your name is holy, and the holy ones praise You every day. Selah."
+  },
+  {
+    "id": "kaddish",
+    "title_he": "קדיש",
+    "title_fr": "Kaddish",
+    "title_en": "Kaddish",
+    "category": "mourning",
+    "text_he": "יתגדל ויתקדש שמיה רבה...",
+    "text_phonetic": "Yitgadal veyitkadash shemei raba...",
+    "translation_fr": "Que Son grand nom soit exalté et sanctifié...",
+    "translation_en": "May His great name be exalted and sanctified..."
+  },
+  {
+    "id": "aleinu",
+    "title_he": "עלינו",
+    "title_fr": "Aleinu",
+    "title_en": "Aleinu",
+    "category": "closing",
+    "text_he": "עלינו לשבח לאדון הכל לתת גדלה ליוצר בראשית...",
+    "text_phonetic": "Aleinu leshabeach laAdon hakol latet gedula leyotzei vereshit...",
+    "translation_fr": "Il nous incombe de louer le Maître de tout, d'attribuer la grandeur au Créateur du commencement...",
+    "translation_en": "It is our duty to praise the Master of all, to ascribe greatness to the Creator of the beginning..."
+  },
+  {
+    "id": "kiddush",
+    "title_he": "קידוש",
+    "title_fr": "Kiddouch (Chabbat)",
+    "title_en": "Kiddush (Shabbat)",
+    "category": "shabbat",
+    "text_he": "ויהי ערב ויהי בקר יום הששי ויכלו השמים והארץ וכל צבאם...",
+    "text_phonetic": "Vayehi erev vayehi boker yom hashishi vayechulu hashamayim vehaaretz vechol tzevaam...",
+    "translation_fr": "Et il y eut soir et il y eut matin, le sixième jour. Les cieux et la terre furent achevés avec toute leur armée...",
+    "translation_en": "And there was evening and there was morning, the sixth day. The heavens and the earth were finished with all their host..."
+  },
+  {
+    "id": "havdalah",
+    "title_he": "הבדלה",
+    "title_fr": "Havdala (Sortie du Chabbat)",
+    "title_en": "Havdalah (End of Shabbat)",
+    "category": "shabbat",
+    "text_he": "המבדיל בין קדש לחול בין אור לחושך...",
+    "text_phonetic": "Hamavdil bein kodesh lechol bein or lechoshech...",
+    "translation_fr": "Qui distingue entre le sacré et le profane, entre la lumière et les ténèbres...",
+    "translation_en": "Who distinguishes between the sacred and the profane, between light and darkness..."
+  },
+  {
+    "id": "birkat_hamazon",
+    "title_he": "ברכת המזון",
+    "title_fr": "Birkat Hamazon (Bénédiction après les repas)",
+    "title_en": "Birkat Hamazon (Grace After Meals)",
+    "category": "meals",
+    "text_he": "ברוך אתה יהוה אלהינו מלך העולם הזן את העולם כולו בטובו בחן בחסד וברחמים...",
+    "text_phonetic": "Baruch ata Adonai Eloheinu Melech haolam hazan et haolam kulo betuvo bechen bechesed uverachamim...",
+    "translation_fr": "Béni sois-Tu, Éternel notre Dieu, Roi de l'univers, qui nourrit le monde entier avec Ta bonté, avec grâce, avec bonté et miséricorde...",
+    "translation_en": "Blessed are You, Lord our God, King of the universe, who feeds the entire world with His goodness, with grace, kindness and mercy..."
+  }
+]

@@ -24,6 +24,7 @@ export function Header() {
   const navItems = [
     { path: '/', label: t('nav.home') },
     { path: '/synagogues', label: t('nav.synagogues') },
+    { path: '/sidour', label: 'Sidour 📖' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
