@@ -152,7 +152,7 @@ export function MinyanCard({
             <div
               className={cn(
                 'h-full transition-all duration-500',
-                isComplete ? 'bg-green-500' : 'bg-amber-500'
+                isComplete ? 'bg-green-500' : progressPercent < 30 ? 'bg-red-500' : progressPercent < 70 ? 'bg-amber-500' : 'bg-yellow-400'
               )}
               style={{ width: `${progressPercent}%` }}
             />

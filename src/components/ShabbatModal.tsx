@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { Moon, Sun, Clock, AlertTriangle } from 'lucide-react';
-import { useShabbatObserver } from '@/hooks/useShabbatObserver';
+import { useShabbatObserver, getZmanimForDate } from '@/hooks/useShabbatObserver';
 import { useGeolocation } from '@/hooks/useGeolocation';
 
 export function ShabbatModal() {
   const { t, i18n } = useTranslation();
   const { position } = useGeolocation();
-  const { isForbidden, isShabbat, isHoliday, holidayName, candleLighting, havdalah, minutesUntilShabbat } = 
+  const { isForbidden, isShabbat, isHoliday, holidayName, candleLighting, havdalah, minutesUntilShabbat, source, lastUpdated } = 
     useShabbatObserver(position?.latitude, position?.longitude);
 
   if (!isForbidden) {
@@ -113,6 +113,20 @@ export function ShabbatModal() {
               ? 'App will reopen after Shabbat'
               : 'L\'application rouvrira après le Chabbat'}
           </span>
+        </div>
+
+        {/* Source info */}
+        <div className="mt-4 pt-4 border-t border-gray-200">
+          <p className="text-xs text-gray-400">
+            Source: {source}
+            <br />
+            Dernière mise à jour: {lastUpdated.toLocaleTimeString()}
+          </p>
+          <p className="text-xs text-gray-400 mt-1">
+            Basé sur le calendrier hébraïque traditionnel
+            <br />
+            Choulhan Aroukh, Orach Haim 261, 293
+          </p>
         </div>
       </div>
     </div>
