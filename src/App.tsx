@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+const BASENAME = '/minyan';
 import { useEffect } from 'react';
 import { Toaster } from 'sonner';
 import Index from '@/pages/Index';
@@ -21,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <Router>
+    <Router basename={BASENAME}>
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/synagogues" element={<Synagogues />} />
