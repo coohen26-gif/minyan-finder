@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const BASENAME = '/minyan';
 import { useEffect } from 'react';
+import { usePushNotifications } from '@/hooks/usePushNotifications';
 import { Toaster } from 'sonner';
 import Index from '@/pages/Index';
 import Synagogues from '@/pages/Synagogues';
@@ -16,10 +17,13 @@ function App() {
   const [rabbiChatOpen, setRabbiChatOpen] = useState(false);
   const [organizerOpen, setOrganizerOpen] = useState(false);
 
-  // Set document title for mydavid.io/minian
+  // Set document title for mydavid.io/minyan
   useEffect(() => {
     document.title = 'Minyan Finder - mydavid.io';
   }, []);
+
+  // Enable push notifications
+  usePushNotifications();
 
   return (
     <Router basename={BASENAME}>
