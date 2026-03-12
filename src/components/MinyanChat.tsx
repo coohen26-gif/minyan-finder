@@ -24,7 +24,7 @@ interface MinyanChatProps {
 }
 
 export function MinyanChat({ minyan, isOpen, onClose, users, currentUserId }: MinyanChatProps) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState('');
   const messagesEndRef = useRef<HTMLDivElement>(null);

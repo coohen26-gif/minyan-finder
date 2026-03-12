@@ -8,8 +8,7 @@ import {
   Settings, 
   TrendingUp,
   DollarSign,
-  Ticket,
-  Bell
+  Ticket
 } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -67,7 +66,7 @@ const mockOrganizerData = {
 };
 
 export function OrganizerDashboard({ isOpen, onClose }: OrganizerDashboardProps) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [activeTab, setActiveTab] = useState('overview');
 
   if (!isOpen) return null;

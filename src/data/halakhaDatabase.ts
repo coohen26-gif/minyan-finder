@@ -600,31 +600,3 @@ export function getHalakhaById(id: string): HalakhaEntry | undefined {
 }
 
 export default halakhaDatabase;
-
-// Fonction de recherche
-export function searchHalakha(query: string, language: 'fr' | 'he' = 'fr'): HalakhaEntry[] {
-  const searchTerms = query.toLowerCase().split(' ');
-  
-  return halakhaDatabase.filter(entry => {
-    const searchField = language === 'he' ? entry.question_he : entry.question;
-    const contentField = language === 'he' ? entry.answer_he : entry.answer;
-    
-    return searchTerms.some(term => 
-      searchField.toLowerCase().includes(term) ||
-      contentField.toLowerCase().includes(term) ||
-      entry.keywords.some(k => k.toLowerCase().includes(term))
-    );
-  });
-}
-
-// Fonction pour obtenir par catégorie
-export function getHalakhaByCategory(category: HalakhaEntry['category']): HalakhaEntry[] {
-  return halakhaDatabase.filter(entry => entry.category === category);
-}
-
-// Fonction pour obtenir une entrée par ID
-export function getHalakhaById(id: string): HalakhaEntry | undefined {
-  return halakhaDatabase.find(entry => entry.id === id);
-}
-
-export default halakhaDatabase;

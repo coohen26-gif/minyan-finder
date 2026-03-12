@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { Globe, Menu, X, Synagogue } from 'lucide-react';
+import { Globe, Menu, X, Building2 } from 'lucide-react';
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
@@ -34,7 +34,7 @@ export function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-4 flex">
           <Link to="/" className="flex items-center space-x-2">
-            <Synagogue className="h-6 w-6" />
+            <Building2 className="h-6 w-6" />
             <span className="font-bold">{t('app.title')}</span>
           </Link>
         </div>

@@ -4,8 +4,8 @@ import { X, Plane, ShoppingBag, BookOpen, Users, Star } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { getActiveAds, AdConfig } from '@/data/adsConfig';
-import { useGeolocation } from '@/hooks/useGeolocation';
+import { AdConfig } from '@/data/adsConfig';
+
 
 interface AdsBannerProps {
   position: 'top' | 'bottom' | 'sidebar';
@@ -28,9 +28,8 @@ const typeColors: Record<AdConfig['type'], string> = {
   events: 'bg-pink-100 text-pink-800',
 };
 
-export function AdsBanner({ position, maxAds = 3 }: AdsBannerProps) {
-  const { t, i18n } = useTranslation();
-  const { position: userPos } = useGeolocation();
+export function AdsBanner({ position }: AdsBannerProps) {
+  const { i18n } = useTranslation();
   const [dismissedAds, setDismissedAds] = useState<Set<string>>(new Set());
   const [showAds, setShowAds] = useState(true);
 

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import { Toaster } from 'sonner';
 import Index from '@/pages/Index';
 import Synagogues from '@/pages/Synagogues';
@@ -13,6 +14,11 @@ import OrganizerDashboard from '@/components/OrganizerDashboard';
 function App() {
   const [rabbiChatOpen, setRabbiChatOpen] = useState(false);
   const [organizerOpen, setOrganizerOpen] = useState(false);
+
+  // Set document title for mydavid.io/minian
+  useEffect(() => {
+    document.title = 'Minyan Finder - mydavid.io';
+  }, []);
 
   return (
     <Router>

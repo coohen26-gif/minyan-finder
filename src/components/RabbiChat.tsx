@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { X, Send, BookOpen, AlertTriangle, Loader2, WifiOff, Search } from 'lucide-react';
+import { X, Send, BookOpen, AlertTriangle, Loader2, WifiOff } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
@@ -66,7 +66,7 @@ Niveau: Chova (obligation majeure), pas de divergence sur ce point fondamental.
 Pour une application pratique dans votre situation spécifique, consultez votre Rav local."`;
 
 export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 'welcome',
@@ -108,7 +108,7 @@ export function RabbiChat({ isOpen, onClose }: RabbiChatProps) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY || ''}`,
+          'Authorization': `Bearer ${(import.meta as any).env?.VITE_GROQ_API_KEY || ''}`,
         },
         body: JSON.stringify({
           model: 'mixtral-8x7b-32768',

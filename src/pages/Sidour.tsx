@@ -2,7 +2,6 @@ import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Book, ChevronRight, Languages, Scroll } from 'lucide-react';
 import { Header } from '@/components/Header';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import sidourData from '@/data/sidour.json';
@@ -36,7 +35,7 @@ const categories: Record<string, { label_fr: string; label_en: string; icon: str
 };
 
 export default function Sidour() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [displayMode, setDisplayMode] = useState<DisplayMode>('both');
   const [textSize, setTextSize] = useState<TextSize>('medium');

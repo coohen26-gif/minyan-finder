@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Plus, Filter, MapPin, Bell, BellOff, Users } from 'lucide-react';
+import { Plus, Filter, MapPin, Users } from 'lucide-react';
 import { toast } from 'sonner';
 import { Minyan, MinyanRequest } from '@/lib/api';
 import { useGeolocation, calculateDistance } from '@/hooks/useGeolocation';
@@ -206,10 +206,10 @@ export default function Index() {
         if (m.id === minyanId) {
           const newParticipants = [...m.participants, 'current_user'];
           const newStatus = newParticipants.length >= 10 ? 'complete' : 'open';
-          const updatedMinyan = { 
+          const updatedMinyan: Minyan = { 
             ...m, 
             participants: newParticipants,
-            status: newStatus
+            status: newStatus as 'open' | 'complete' | 'cancelled'
           };
           
           // If just reached 10, send notification
@@ -272,8 +272,8 @@ export default function Index() {
           return {
             ...m,
             participants: newParticipants,
-            status: newParticipants.length >= 10 ? 'complete' : 'open',
-          };
+            status: (newParticipants.length >= 10 ? 'complete' : 'open') as 'open' | 'complete' | 'cancelled',
+          } as Minyan;
         }
         return m;
       })
@@ -332,7 +332,7 @@ export default function Index() {
                 {stats.myTables} mes tables
               </Badge>
             )}
-          </Badge>
+          </div>
 
           {position && (
             <Badge variant="outline" className="mt-2">
