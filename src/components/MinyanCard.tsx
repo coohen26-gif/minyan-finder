@@ -215,10 +215,10 @@ export function MinyanCard({
             onClick={() => isParticipant ? onLeave(minyan.id) : onJoin(minyan.id)}
           >
             {isParticipant 
-              ? 'Quitter la minyan' 
+              ? 'Se retirer du minyan' 
               : isComplete 
                 ? `Rejoindre (+${participantCount - minRequired + 1})` 
-                : 'S\'asseoir au minyan'}
+                : 'Participer au minyan'}
           </Button>
           
           {isParticipant && (
