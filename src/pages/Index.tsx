@@ -229,6 +229,44 @@ export default function Index() {
       minyans.map((m) => {
         if (m.id === minyanId) {
           const newParticipants = m.participants.filter((p) => p !== 'current_user');
+          const wasComplete = m.status === 'complete';
+          const isNowOpen = newParticipants.length < 10;
+          
+          // Si on passait de 10+ à moins de 10, notifier les gens aux alentours
+          if (wasComplete && isNowOpen) {
+            toast.warning('⚠️ Table incomplète !', {
+              description: `${m.location} - Plus que ${newParticipants.length}/10. Le Minyan risque de ne pas avoir lieu.`,
+              duration: 5000,
+            });
+            
+            // Notifier les abonnés aux notifications
+            if (notificationsEnabled.has(minyanId)) {
+              if ('Notification' in window && Notification.permission === 'granted') {
+                new Notification('⚠️ Table incomplète', {
+                  body: `Il manque des personnes à ${m.location}. Revenez vite !`,
+                  icon: '/vite.svg',
+                });
+              }
+            }
+            
+            // Notifier les gens proches
+            if (position) {
+              const distance = calculateDistance(position, {
+                latitude: m.latitude,
+                longitude: m.longitude,
+              });
+              if (distance <= 500) {
+                toast.info('Une table proche a besoin de vous !', {
+                  description: `${m.location} - ${10 - newParticipants.length} personne(s) manquante(s)`,
+                  action: {
+                    label: 'Rejoindre',
+                    onClick: () => handleJoin(minyanId),
+                  },
+                });
+              }
+            }
+          }
+          
           return {
             ...m,
             participants: newParticipants,
