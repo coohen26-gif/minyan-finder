@@ -139,7 +139,7 @@ export function MinyanCard({
           <div className="flex items-center justify-between text-sm">
             <span className="flex items-center gap-1">
               <Users className="h-4 w-4 text-muted-foreground" />
-              Table : {participantCount}/{minRequired}
+              Minyan : {participantCount}/{minRequired}
             </span>
             <span className={cn(
               'text-xs font-bold',
@@ -167,7 +167,7 @@ export function MinyanCard({
           >
             <span className="text-sm font-medium flex items-center gap-2">
               <User className="h-4 w-4" />
-              {participantCount} personne{participantCount > 1 ? 's' : ''} à la table
+              {participantCount} personne{participantCount > 1 ? 's' : ''} au minyan
             </span>
             {showParticipants ? (
               <ChevronUp className="h-4 w-4 text-muted-foreground" />
@@ -215,10 +215,10 @@ export function MinyanCard({
             onClick={() => isParticipant ? onLeave(minyan.id) : onJoin(minyan.id)}
           >
             {isParticipant 
-              ? 'Quitter la table' 
+              ? 'Quitter la minyan' 
               : isComplete 
                 ? `Rejoindre (+${participantCount - minRequired + 1})` 
-                : 'S\'asseoir à la table'}
+                : 'S\'asseoir au minyan'}
           </Button>
           
           {isParticipant && (

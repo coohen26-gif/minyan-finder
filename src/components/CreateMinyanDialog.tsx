@@ -53,7 +53,7 @@ export function CreateMinyanDialog({
     <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
       <div className="bg-background rounded-lg shadow-lg max-w-md w-full max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="text-lg font-semibold">Créer une table de Minyan (10 requis)</h2>
+          <h2 className="text-lg font-semibold">Créer une minyan de Minyan (10 requis)</h2>
           <button
             onClick={onClose}
             className="p-1 hover:bg-muted rounded-full transition-colors"
@@ -119,7 +119,7 @@ export function CreateMinyanDialog({
           <div>
             <label className="block text-sm font-medium mb-2 flex items-center gap-1">
               <Repeat className="h-4 w-4" />
-              Type de table
+              Type de minyan
             </label>
             <div className="grid grid-cols-2 gap-2">
               <button
@@ -151,8 +151,8 @@ export function CreateMinyanDialog({
             </div>
             <p className="text-xs text-muted-foreground mt-1">
               {formData.is_permanent 
-                ? 'Cette table sera disponible chaque jour à la même heure' 
-                : 'Table pour aujourd\'hui uniquement'}
+                ? 'Cette minyan sera disponible chaque jour à la même heure' 
+                : 'Minyan pour aujourd\'hui uniquement'}
             </p>
           </div>
 
@@ -192,8 +192,8 @@ export function CreateMinyanDialog({
             <p className="font-medium text-blue-800">💡 Comment ça marche :</p>
             <ul className="text-blue-700 mt-1 space-y-1 text-xs">
               <li>• Il faut exactement 10 personnes pour valider le Minyan</li>
-              <li>• Les participants cliquent "Rejoindre la table"</li>
-              <li>• À 10 personnes, la table devient verte ✅</li>
+              <li>• Les participants cliquent "Rejoindre la minyan"</li>
+              <li>• À 10 personnes, la minyan devient verte ✅</li>
               <li>• Au-delà de 10, c'est bonus (11/10, 12/10...)</li>
             </ul>
           </div>
@@ -204,7 +204,7 @@ export function CreateMinyanDialog({
               Annuler
             </Button>
             <Button type="submit" className="flex-1">
-              Créer la table (0/10)
+              Créer la minyan (0/10)
             </Button>
           </div>
         </form>

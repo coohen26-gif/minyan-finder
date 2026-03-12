@@ -79,7 +79,7 @@ const mockMinyans: Minyan[] = [
     latitude: 48.875,
     longitude: 2.35,
     time: new Date(Date.now() + 10800000).toISOString(),
-    notes: 'Table de bureau - tous les jours',
+    notes: 'Minyan de bureau - tous les jours',
     created_by: 'user19',
     created_at: new Date().toISOString(),
     participants: ['user19', 'user20', 'user21', 'user22', 'user23', 'user24', 'user25', 'user26', 'user27', 'user28', 'user29', 'user30'],
@@ -132,18 +132,18 @@ export default function Index() {
     });
   }, [position, minyans, userParticipations, t]);
 
-  // Send notification when table reaches 10
+  // Send notification when minyan reaches 10
   const sendCompletionNotification = useCallback((minyan: Minyan) => {
     // Browser notification
     if ('Notification' in window && Notification.permission === 'granted') {
       new Notification('🎉 Minyan complet !', {
-        body: `La table à ${minyan.location} a atteint 10 personnes. Le Minyan peut avoir lieu !`,
+        body: `La minyan à ${minyan.location} a atteint 10 personnes. Le Minyan peut avoir lieu !`,
         icon: '/vite.svg',
       });
     }
     
     // Toast notification
-    toast.success('🎉 Table complète !', {
+    toast.success('🎉 Minyan complète !', {
       description: `${minyan.location} - 10/10 personnes. Le Minyan est validé !`,
       duration: 5000,
     });
@@ -197,7 +197,7 @@ export default function Index() {
     };
     setMinyans([newMinyan, ...minyans]);
     setUserParticipations(new Set([...userParticipations, newMinyan.id]));
-    toast.success('Table de Minyan créée ! 10 personnes nécessaires.');
+    toast.success('Minyan de Minyan créée ! 10 personnes nécessaires.');
   };
 
   const handleJoin = (minyanId: string) => {
@@ -223,7 +223,7 @@ export default function Index() {
       })
     );
     setUserParticipations(new Set([...userParticipations, minyanId]));
-    toast.success('Vous êtes assis à la table !');
+    toast.success('Vous êtes assis au minyan !');
   };
 
   const handleLeave = (minyanId: string) => {
@@ -236,7 +236,7 @@ export default function Index() {
           
           // Si on passait de 10+ à moins de 10, notifier les gens aux alentours
           if (wasComplete && isNowOpen) {
-            toast.warning('⚠️ Table incomplète !', {
+            toast.warning('⚠️ Minyan incomplète !', {
               description: `${m.location} - Plus que ${newParticipants.length}/10. Le Minyan risque de ne pas avoir lieu.`,
               duration: 5000,
             });
@@ -244,7 +244,7 @@ export default function Index() {
             // Notifier les abonnés aux notifications
             if (notificationsEnabled.has(minyanId)) {
               if ('Notification' in window && Notification.permission === 'granted') {
-                new Notification('⚠️ Table incomplète', {
+                new Notification('⚠️ Minyan incomplète', {
                   body: `Il manque des personnes à ${m.location}. Revenez vite !`,
                   icon: '/vite.svg',
                 });
@@ -258,7 +258,7 @@ export default function Index() {
                 longitude: m.longitude,
               });
               if (distance <= 500) {
-                toast.info('Une table proche a besoin de vous !', {
+                toast.info('Une minyan proche a besoin de vous !', {
                   description: `${m.location} - ${10 - newParticipants.length} personne(s) manquante(s)`,
                   action: {
                     label: 'Rejoindre',
@@ -281,17 +281,17 @@ export default function Index() {
     const newParticipations = new Set(userParticipations);
     newParticipations.delete(minyanId);
     setUserParticipations(newParticipations);
-    toast.success('Vous avez quitté la table');
+    toast.success('Vous avez quitté la minyan');
   };
 
   const toggleNotification = (minyanId: string) => {
     const newNotifications = new Set(notificationsEnabled);
     if (newNotifications.has(minyanId)) {
       newNotifications.delete(minyanId);
-      toast.info('Notifications désactivées pour cette table');
+      toast.info('Notifications désactivées pour cette minyan');
     } else {
       newNotifications.add(minyanId);
-      toast.success('Vous serez notifié quand la table atteindra 10 !');
+      toast.success('Vous serez notifié quand la minyan atteindra 10 !');
     }
     setNotificationsEnabled(newNotifications);
   };
@@ -301,8 +301,8 @@ export default function Index() {
     const total = minyans.length;
     const complete = minyans.filter(m => m.status === 'complete').length;
     const open = minyans.filter(m => m.status === 'open').length;
-    const myTables = minyans.filter(m => userParticipations.has(m.id)).length;
-    return { total, complete, open, myTables };
+    const myMinyans = minyans.filter(m => userParticipations.has(m.id)).length;
+    return { total, complete, open, myMinyans };
   }, [minyans, userParticipations]);
 
   return (
@@ -319,7 +319,7 @@ export default function Index() {
           <div className="flex flex-wrap justify-center gap-4 mt-4">
             <Badge variant="outline" className="px-3 py-1">
               <Users className="h-3 w-3 mr-1" />
-              {stats.total} tables
+              {stats.total} minyans
             </Badge>
             <Badge variant="default" className="px-3 py-1 bg-green-100 text-green-800">
               {stats.complete} validées
@@ -327,9 +327,9 @@ export default function Index() {
             <Badge variant="secondary" className="px-3 py-1">
               {stats.open} en cours
             </Badge>
-            {stats.myTables > 0 && (
+            {stats.myMinyans > 0 && (
               <Badge variant="outline" className="px-3 py-1 border-primary">
-                {stats.myTables} mes tables
+                {stats.myMinyans} mes minyans
               </Badge>
             )}
           </div>
