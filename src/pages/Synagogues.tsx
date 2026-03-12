@@ -1,13 +1,14 @@
 import { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Search, MapPin, Filter, Phone, Globe } from 'lucide-react';
+import { Search, MapPin, Phone, Globe } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Synagogue } from '@/lib/api';
 import { useGeolocation, calculateDistance, formatDistance } from '@/hooks/useGeolocation';
+import { LocationSelector } from '@/components/LocationSelector';
+import synagoguesIsrael from '@/data/synagogues_israel.json';
 
 // Sample synagogue data
 const synagoguesData: Synagogue[] = [
@@ -69,8 +70,8 @@ const synagoguesData: Synagogue[] = [
   },
 ];
 
-const countries = Array.from(new Set(synagoguesData.map((s) => s.country)));
-const cities = Array.from(new Set(synagoguesData.map((s) => s.city)));
+// Merge with Israel synagogues
+const allSynagogues: Synagogue[] = [...synagoguesData, ...(synagoguesIsrael as Synagogue[])];
 
 export default function Synagogues() {
   const { t } = useTranslation();
@@ -80,7 +81,7 @@ export default function Synagogues() {
   const [selectedCity, setSelectedCity] = useState<string>('all');
 
   const filteredSynagogues = useMemo(() => {
-    let result = synagoguesData;
+    let result = allSynagogues;
 
     // Search filter
     if (searchQuery) {
@@ -138,9 +139,18 @@ export default function Synagogues() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">{t('synagogue.title')}</h1>
           <p className="text-muted-foreground">
-            {synagoguesData.length} synagogues référencées
+            {allSynagogues.length} synagogues référencées
           </p>
         </div>
+
+        {/* Location Selector */}
+        <LocationSelector
+          selectedCountry={selectedCountry}
+          selectedCity={selectedCity}
+          onCountryChange={setSelectedCountry}
+          onCityChange={setSelectedCity}
+          userLocation={position}
+        />
 
         {/* Search and Filters */}
         <div className="space-y-4 mb-6">
@@ -156,49 +166,7 @@ export default function Synagogues() {
             />
           </div>
 
-          {/* Filters */}
-          <div className="flex flex-wrap gap-2">
-            <Filter className="h-4 w-4 text-muted-foreground mt-2" />
-            
-            <select
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
-              className="px-3 py-2 rounded-md border bg-background text-sm"
-            >
-              <option value="all">Tous les pays</option>
-              {countries.map((country) => (
-                <option key={country} value={country}>
-                  {country}
-                </option>
-              ))}
-            </select>
 
-            <select
-              value={selectedCity}
-              onChange={(e) => setSelectedCity(e.target.value)}
-              className="px-3 py-2 rounded-md border bg-background text-sm"
-            >
-              <option value="all">Toutes les villes</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
-            </select>
-
-            {(selectedCountry !== 'all' || selectedCity !== 'all') && (
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => {
-                  setSelectedCountry('all');
-                  setSelectedCity('all');
-                }}
-              >
-                Réinitialiser
-              </Button>
-            )}
-          </div>
         </div>
 
         {/* Synagogue List */}

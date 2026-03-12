@@ -1,0 +1,327 @@
+[
+  {
+    "id": "il_001",
+    "name": "Grande Synagogue de Tel Aviv",
+    "address": "2 Rue Allenby",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0853,
+    "longitude": 34.7818,
+    "phone": "+972 3-510-1526",
+    "website": "https://greatsynagogue.co.il",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:00", "09:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_002",
+    "name": "Synagogue Beit El",
+    "address": "15 Rue Bialik",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0701,
+    "longitude": 34.7736,
+    "phone": "+972 3-522-4856",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:30", "08:00"],
+      "mincha": ["13:30", "18:30"],
+      "maariv": ["19:30"]
+    }
+  },
+  {
+    "id": "il_003",
+    "name": "Synagogue Ohel Moed",
+    "address": "5 Rue Yehuda HaLevi",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0625,
+    "longitude": 34.7722,
+    "phone": "+972 3-517-2847",
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:15", "21:00"]
+    }
+  },
+  {
+    "id": "il_004",
+    "name": "Synagogue Chabad Tel Aviv",
+    "address": "19 Rue Bograshov",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0789,
+    "longitude": 34.7689,
+    "phone": "+972 3-529-4970",
+    "website": "https://chabadtelaviv.co.il",
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00", "10:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:30", "23:00"]
+    }
+  },
+  {
+    "id": "il_005",
+    "name": "Synagogue Yad Eliyahu",
+    "address": "8 Rue HaAliya",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0534,
+    "longitude": 34.7921,
+    "phone": "+972 3-681-2345",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_006",
+    "name": "Synagogue Rambam",
+    "address": "12 Rue Basel",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0891,
+    "longitude": 34.7798,
+    "phone": "+972 3-544-8765",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:30", "18:30"],
+      "maariv": ["19:30"]
+    }
+  },
+  {
+    "id": "il_007",
+    "name": "Synagogue Hechal Yehuda",
+    "address": "45 Rue Ben Yehuda",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0765,
+    "longitude": 34.7685,
+    "phone": "+972 3-522-1199",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:30", "08:00", "09:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:15", "20:30"]
+    }
+  },
+  {
+    "id": "il_008",
+    "name": "Synagogue Bet Israel",
+    "address": "7 Rue Shlomo HaMelech",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0723,
+    "longitude": 34.7756,
+    "phone": "+972 3-525-6789",
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:15"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_009",
+    "name": "Synagogue Centre Habad Bat Yam",
+    "address": "23 Rue Balfour",
+    "city": "Bat Yam",
+    "country": "Israel",
+    "latitude": 32.0232,
+    "longitude": 34.7505,
+    "phone": "+972 3-507-2345",
+    "website": "https://chabadbatyam.co.il",
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["13:00", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_010",
+    "name": "Synagogue Ohel Yitzhak",
+    "address": "56 Rue HaShalom",
+    "city": "Bat Yam",
+    "country": "Israel",
+    "latitude": 32.0156,
+    "longitude": 34.7423,
+    "phone": "+972 3-508-4567",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_011",
+    "name": "Synagogue Yeshurun",
+    "address": "12 Rue Yoseftal",
+    "city": "Bat Yam",
+    "country": "Israel",
+    "latitude": 32.0289,
+    "longitude": 34.7589,
+    "phone": "+972 3-506-7890",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:00", "18:30"],
+      "maariv": ["19:30"]
+    }
+  },
+  {
+    "id": "il_012",
+    "name": "Synagogue Beit Knesset HaGadol",
+    "address": "89 Rue Herzl",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3329,
+    "longitude": 34.8599,
+    "phone": "+972 9-882-3456",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30", "09:30"],
+      "mincha": ["13:00", "15:00", "18:00"],
+      "maariv": ["19:00", "20:30", "22:00"]
+    }
+  },
+  {
+    "id": "il_013",
+    "name": "Synagogue Chabad Netanya",
+    "address": "34 Rue Smilansky",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3289,
+    "longitude": 34.8534,
+    "phone": "+972 9-884-5678",
+    "website": "https://chabadnetanya.co.il",
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00", "10:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_014",
+    "name": "Synagogue Beit El Netanya",
+    "address": "67 Rue Weizmann",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3378,
+    "longitude": 34.8656,
+    "phone": "+972 9-886-1234",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_015",
+    "name": "Synagogue Ohel Avraham",
+    "address": "23 Rue Jabotinsky",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3412,
+    "longitude": 34.8723,
+    "phone": "+972 9-883-4567",
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:15"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_016",
+    "name": "Grande Synagogue d'Ashdod",
+    "address": "45 Rue Herzl",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.8014,
+    "longitude": 34.6435,
+    "phone": "+972 8-852-1234",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["06:30", "07:30", "08:30"],
+      "mincha": ["13:00", "15:00", "18:00"],
+      "maariv": ["19:00", "20:30"]
+    }
+  },
+  {
+    "id": "il_017",
+    "name": "Synagogue Chabad Ashdod",
+    "address": "12 Rue Bnei Brith",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.7967,
+    "longitude": 34.6389,
+    "phone": "+972 8-856-7890",
+    "website": "https://chabadashdod.co.il",
+    "denomination": "chabad",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_018",
+    "name": "Synagogue Yad Mordechai",
+    "address": "78 Rue HaTikva",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.8056,
+    "longitude": 34.6512,
+    "phone": "+972 8-854-3456",
+    "denomination": "sephardi",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_019",
+    "name": "Synagogue Beit Yossef",
+    "address": "34 Rue HaShomer",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.8123,
+    "longitude": 34.6456,
+    "phone": "+972 8-858-9012",
+    "denomination": "ashkenazi",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:15"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_020",
+    "name": "Synagogue Orot Hatorah",
+    "address": "56 Rue HaGefen",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.7890,
+    "longitude": 34.6321,
+    "phone": "+972 8-851-2345",
+    "denomination": "mixed",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:00", "18:30"],
+      "maariv": ["19:30"]
+    }
+  }
+]
