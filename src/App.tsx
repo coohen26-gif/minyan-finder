@@ -31,24 +31,25 @@ function App() {
       <Toaster position="top-right" richColors />
       <ShabbatModal />
       
-      {/* Floating Buttons */}
-      <div className="fixed bottom-4 right-4 flex flex-col gap-2 z-40">
+      {/* Floating Buttons - Mobile optimized */}
+      <div className="fixed bottom-4 right-4 flex flex-col gap-2 z-40 md:bottom-6 md:right-6">
         <Button
           onClick={() => setOrganizerOpen(true)}
-          className="rounded-full shadow-lg"
-          size="lg"
+          className="rounded-full shadow-lg text-sm md:text-base px-3 md:px-4"
+          size="sm"
           variant="secondary"
         >
-          <LayoutDashboard className="h-5 w-5 mr-2" />
-          Organisateur
+          <LayoutDashboard className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
+          <span className="hidden sm:inline">Organisateur</span>
+          <span className="sm:hidden">Org</span>
         </Button>
         
         <Button
           onClick={() => setRabbiChatOpen(true)}
-          className="rounded-full shadow-lg"
-          size="lg"
+          className="rounded-full shadow-lg text-sm md:text-base px-3 md:px-4"
+          size="sm"
         >
-          <BookOpen className="h-5 w-5 mr-2" />
+          <BookOpen className="h-4 w-4 md:h-5 md:w-5 mr-1 md:mr-2" />
           Rav
         </Button>
       </div>

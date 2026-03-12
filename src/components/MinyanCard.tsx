@@ -65,7 +65,7 @@ export function MinyanCard({
   return (
     <Card
       className={cn(
-        'relative overflow-hidden transition-all',
+        'relative overflow-hidden transition-all w-full',
         isFuneral && 'border-gray-800 shadow-lg',
         isNearby && 'ring-2 ring-green-500 ring-offset-2',
         isComplete && 'border-green-500 shadow-md'

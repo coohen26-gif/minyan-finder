@@ -348,14 +348,14 @@ export default function Index() {
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-          <div className="flex items-center gap-2 overflow-x-auto pb-2">
-            <Filter className="h-4 w-4 text-muted-foreground" />
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
+            <Filter className="h-4 w-4 text-muted-foreground shrink-0" />
             {prayerFilters.map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
+                className={`px-3 py-1.5 rounded-full text-sm font-medium whitespace-nowrap transition-colors shrink-0 ${
                   filter === f
                     ? 'bg-primary text-primary-foreground'
                     : 'bg-muted hover:bg-muted/80'
@@ -373,7 +373,7 @@ export default function Index() {
         </div>
 
         {/* Minyan List */}
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {filteredMinyans.map((minyan) => (
             <MinyanCard
               key={minyan.id}
