@@ -323,5 +323,180 @@
       "mincha": ["13:00", "18:30"],
       "maariv": ["19:30"]
     }
+  },
+  {
+    "id": "il_021",
+    "name": "Synagogue des Français (Shaar Hashamayim)",
+    "address": "3 Rehov Lilienblum (près de Rothschild)",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0628,
+    "longitude": 34.7692,
+    "phone": "+972 3-510-1847",
+    "denomination": "sephardi",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_022",
+    "name": "Centre Lev - Neve Tsedek (Francophone)",
+    "address": "27 Rue Kalisher",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0578,
+    "longitude": 34.7634,
+    "phone": "+972 3-555-0123",
+    "website": "https://www.lev-tlv.com",
+    "denomination": "mixed",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["07:30", "09:00"],
+      "mincha": ["13:30", "18:30"],
+      "maariv": ["19:30"]
+    }
+  },
+  {
+    "id": "il_023",
+    "name": "Chabad French Speaking Tel Aviv",
+    "address": "16 Rue Khevron",
+    "city": "Tel Aviv",
+    "country": "Israel",
+    "latitude": 32.0734,
+    "longitude": 34.7756,
+    "phone": "+972 3-529-4970",
+    "website": "https://www.chabad.org/israel/tel-aviv",
+    "denomination": "chabad",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00", "10:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:30"]
+    }
+  },
+  {
+    "id": "il_024",
+    "name": "Synagogue Magen David (Francophone)",
+    "address": "Rehov Harav Uziel, Quartier Gimmel",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.8045,
+    "longitude": 34.6489,
+    "phone": "+972 8-852-3456",
+    "denomination": "sephardi",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:30", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_025",
+    "name": "Chabad Ashdod (Francophone)",
+    "address": "43 Rue Hamelech Shlomo",
+    "city": "Ashdod",
+    "country": "Israel",
+    "latitude": 31.7956,
+    "longitude": 34.6412,
+    "phone": "+972 8-856-7890",
+    "website": "https://www.chabad.org/israel/ashdod",
+    "denomination": "chabad",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_026",
+    "name": "Or Menachem - Merkaz Chabad Francophone",
+    "address": "6 Rue Gad Makhnes",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3345,
+    "longitude": 34.8623,
+    "phone": "+972 9-884-5678",
+    "website": "https://www.habadnetanya.fr",
+    "denomination": "chabad",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00", "10:00"],
+      "mincha": ["12:30", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_027",
+    "name": "Chabad Netanya Francophone (Oved Ben Ami)",
+    "address": "97 Sderot Oved Ben Ami",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3412,
+    "longitude": 34.8712,
+    "phone": "+972 9-883-4567",
+    "denomination": "chabad",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:30", "08:00", "09:30"],
+      "mincha": ["13:00", "15:30", "18:00"],
+      "maariv": ["19:00", "21:30"]
+    }
+  },
+  {
+    "id": "il_028",
+    "name": "Chabad Bat Yam - Communauté Française",
+    "address": "30 Rue Ha-Sar Shapira",
+    "city": "Bat Yam",
+    "country": "Israel",
+    "latitude": 32.0256,
+    "longitude": 34.7523,
+    "phone": "+972 3-507-2345",
+    "website": "https://www.chabad.org/israel/bat-yam",
+    "denomination": "chabad",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:00", "07:30", "09:00"],
+      "mincha": ["13:00", "15:00", "18:00"],
+      "maariv": ["19:00", "21:00"]
+    }
+  },
+  {
+    "id": "il_029",
+    "name": "Synagogue Etz Chaim (Francophone)",
+    "address": "12 Rue Bialik",
+    "city": "Netanya",
+    "country": "Israel",
+    "latitude": 32.3298,
+    "longitude": 34.8567,
+    "phone": "+972 9-885-6789",
+    "denomination": "sephardi",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["06:45", "08:00"],
+      "mincha": ["13:00", "18:00"],
+      "maariv": ["19:00"]
+    }
+  },
+  {
+    "id": "il_030",
+    "name": "Synagogue Yakar (Francophone)",
+    "address": "45 Rue Jabotinsky",
+    "city": "Bat Yam",
+    "country": "Israel",
+    "latitude": 32.0189,
+    "longitude": 34.7456,
+    "phone": "+972 3-508-9012",
+    "denomination": "mixed",
+    "language": "français",
+    "minyan_times": {
+      "shacharit": ["07:00", "08:30"],
+      "mincha": ["13:00", "18:30"],
+      "maariv": ["19:30"]
+    }
   }
 ]
