@@ -1,0 +1,308 @@
+[
+  {
+    "id": "il_051",
+    "name": "Synagogue Tiferet Israel",
+    "address": "5 Rue Hakaraim, Vieille Ville, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7756,
+    "longitude": 35.2334,
+    "phone": "+972 2-627-2212",
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "il_052",
+    "name": "Synagogue Ramban",
+    "address": "Quartier Juif, Vieille Ville",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7745,
+    "longitude": 35.2321,
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "il_053",
+    "name": "Synagogue Beit El (Yeshivat HaMekubalim)",
+    "address": "Quartier Juif, Vieille Ville",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7767,
+    "longitude": 35.2309,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_054",
+    "name": "Synagogue Tzemach Tzedek (Chabad)",
+    "address": "53 Chabad Street, Vieille Ville",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7778,
+    "longitude": 35.2298,
+    "phone": "+972 2-283-125",
+    "denomination": "chabad"
+  },
+  {
+    "id": "il_055",
+    "name": "Synagogue Karaïte",
+    "address": "Quartier Juif, Vieille Ville",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7734,
+    "longitude": 35.2345,
+    "denomination": "karaite"
+  },
+  {
+    "id": "il_056",
+    "name": "Synagogue Yochanan ben Zakai",
+    "address": "4 Rue Beit El, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7748,
+    "longitude": 35.2312,
+    "phone": "+972 2-628-0592",
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_057",
+    "name": "Synagogue Istanbuli",
+    "address": "4 Rue Beit El, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7751,
+    "longitude": 35.2315,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_058",
+    "name": "Synagogue Eliahu Ha'navi",
+    "address": "4 Rue Beit El, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7754,
+    "longitude": 35.2318,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_059",
+    "name": "Synagogue Emtsai (Kahal Tzion)",
+    "address": "4 Rue Beit El, Quartier Juif",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7757,
+    "longitude": 35.2321,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_060",
+    "name": "Chabad of Old City Jerusalem",
+    "address": "10 Chabad Street, Vieille Ville",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7781,
+    "longitude": 35.2301,
+    "denomination": "chabad"
+  },
+  {
+    "id": "il_061",
+    "name": "Synagogue Chabad Rechavia",
+    "address": "8 Rue Ramban, Rechavia",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7801,
+    "longitude": 35.2156,
+    "denomination": "chabad"
+  },
+  {
+    "id": "il_062",
+    "name": "Synagogue Yemin Moshe",
+    "address": "Rue Pele Yoez, Yemin Moshe",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7723,
+    "longitude": 35.2234,
+    "phone": "+972 2-625-3085",
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_063",
+    "name": "Synagogue Hadassah Hospital",
+    "address": "Ein Kerem",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7656,
+    "longitude": 35.1567,
+    "phone": "+972 2-677-6279",
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_064",
+    "name": "Synagogue Université Hébraïque",
+    "address": "Campus Givat Ram",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7912,
+    "longitude": 35.1934,
+    "phone": "+972 2-658-5886",
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_065",
+    "name": "Synagogue Sha'are Ratson (Espagnole & Portugaise)",
+    "address": "23 Rue HaTzefira, German Colony",
+    "city": "Jerusalem",
+    "country": "Israel",
+    "latitude": 31.7589,
+    "longitude": 35.2212,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_066",
+    "name": "Synagogue Ziv Hatora",
+    "address": "52 Rue Hagalil, Haifa",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8212,
+    "longitude": 34.9956,
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_067",
+    "name": "The Spanish Synagogue In Achuzat",
+    "address": "25 Rue Ider, Haifa",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8167,
+    "longitude": 34.9912,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_068",
+    "name": "Synagogue Eliyahu Hanavi",
+    "address": "Central Ahuza, Haifa",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8145,
+    "longitude": 34.9889,
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_069",
+    "name": "Synagogue Pe'er Israel",
+    "address": "44 Rue Raziel David, Haifa",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8198,
+    "longitude": 34.9934,
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "il_070",
+    "name": "Synagogue Carmeliya",
+    "address": "4 Rue Avshalom, Haifa",
+    "city": "Haifa",
+    "country": "Israel",
+    "latitude": 32.8234,
+    "longitude": 34.9967,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_071",
+    "name": "Tribes Of Israel Synagogue",
+    "address": "30 Rue Yisra'el Rokakh, Beer Sheva",
+    "city": "Beer Sheva",
+    "country": "Israel",
+    "latitude": 31.2489,
+    "longitude": 34.7889,
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_072",
+    "name": "Synagogue Rambam (Beer Sheva)",
+    "address": "Centre-ville, Beer Sheva",
+    "city": "Beer Sheva",
+    "country": "Israel",
+    "latitude": 31.2556,
+    "longitude": 34.7956,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_073",
+    "name": "Yeshivat Ayelet Hashachar",
+    "address": "180 Sheshet Hayamim St, Eilat",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5556,
+    "longitude": 34.9456,
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_074",
+    "name": "Yahalom Synagogue",
+    "address": "2 Rue Nachshon, Eilat",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5489,
+    "longitude": 34.9389,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_075",
+    "name": "Chabad Shachmon Eilat",
+    "address": "10/4 Nakhal Shakharut, Eilat",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5656,
+    "longitude": 34.9589,
+    "denomination": "chabad"
+  },
+  {
+    "id": "il_076",
+    "name": "Ohr Hachaim Synagogue",
+    "address": "22 Malkat Shva St, Eilat",
+    "city": "Eilat",
+    "country": "Israel",
+    "latitude": 29.5523,
+    "longitude": 34.9423,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_077",
+    "name": "Synagogue Oneg Shabat",
+    "address": "8 HaShfela, Ramat HaSharon",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1689,
+    "longitude": 32.1689,
+    "denomination": "ashkenazi"
+  },
+  {
+    "id": "il_078",
+    "name": "Synagogue Bar Ilan",
+    "address": "42 Rue Bar Ilan, Herzliya",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1634,
+    "longitude": 34.8398,
+    "denomination": "mixed"
+  },
+  {
+    "id": "il_079",
+    "name": "Synagogue Shaare Kedem",
+    "address": "8 Rue Sirkin, Herzliya",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1598,
+    "longitude": 34.8367,
+    "denomination": "sephardi"
+  },
+  {
+    "id": "il_080",
+    "name": "Synagogue Beit Yosef (Herzliya)",
+    "address": "Centre-ville, Herzliya",
+    "city": "Herzliya",
+    "country": "Israel",
+    "latitude": 32.1712,
+    "longitude": 34.8489,
+    "denomination": "sephardi"
+  }
+]

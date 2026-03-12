@@ -10,6 +10,7 @@ import { useGeolocation, calculateDistance, formatDistance } from '@/hooks/useGe
 import { LocationSelector } from '@/components/LocationSelector';
 import synagoguesIsrael from '@/data/synagogues_israel.json';
 import synagoguesMore from '@/data/synagogues_more.json';
+import synagoguesMassive from '@/data/synagogues_massive.json';
 
 // Sample synagogue data
 const synagoguesData: Synagogue[] = [
@@ -75,7 +76,8 @@ const synagoguesData: Synagogue[] = [
 const allSynagogues: Synagogue[] = [
   ...synagoguesData, 
   ...(synagoguesIsrael as Synagogue[]),
-  ...(synagoguesMore as Synagogue[])
+  ...(synagoguesMore as Synagogue[]),
+  ...(synagoguesMassive as Synagogue[])
 ];
 
 export default function Synagogues() {
