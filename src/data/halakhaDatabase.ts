@@ -574,7 +574,7 @@ export const halakhaDatabase: HalakhaEntry[] = [
 ];
 
 // Fonction de recherche
-export function searchHalakha(query: string, language: 'fr' | 'he' = 'fr'): HalakhaEntry[] {
+export function searchHalakha(query: string, language: 'fr' | 'en' | 'he' = 'fr'): HalakhaEntry[] {
   const searchTerms = query.toLowerCase().split(' ');
   
   return halakhaDatabase.filter(entry => {
